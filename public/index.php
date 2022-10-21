@@ -18,6 +18,11 @@
     <![endif]-->
     
     <?php
-      echo "Hello World";
+      echo "pakyu";
     ?>
 </html>
+
+<?php
+
+require_once '../app/init.php';
+$app = new App;
