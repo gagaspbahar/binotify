@@ -14,6 +14,9 @@ class App {
       $this->controller = $url[0];
       unset($url[0]);
     }
+    else {
+      $this->controller = 'Error404';
+    }
     require_once 'app/controllers/' . $this->controller . '.php';
     $this->controller = new $this->controller;
     if (isset($url[1])) {
@@ -36,7 +39,6 @@ class App {
       $url = filter_var($url, FILTER_SANITIZE_URL);
       $url = ltrim($url, '?');
       $url = explode('/', $url);
-      var_dump($url);
       return $url;
     }
   }

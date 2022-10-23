@@ -22,7 +22,7 @@
                 <a href="album.html"> Album </a>
                 <a href="search.html"> Search </a>
                 <a href="/?login"> Login </a>
-                <a href="logout.html"> Sign Up </a>
+                <a href="/?register"> Sign Up </a>
             </nav>
         </section>
 
