@@ -20,7 +20,7 @@
     <![endif]-->
 
   <h1>Login ke Binomify!</h1>
-  <form action="" method="post">
+  <form action="/api/login.php" method="post">
     <label for="username">Username</label>
     <input type="text" name="username" id="username"><br>
     <label for="password">Password</label>

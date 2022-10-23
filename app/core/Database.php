@@ -1,11 +1,14 @@
 <?php
 
 class Database {
+  private $dbh;
+  private $stmt;
+
   public function __construct()
   {
     $dsn = "pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";user=" . DB_USER . ";password=" . DB_PASSWORD;
     try{
-      $dbh = new PDO($dsn);
+      $this->dbh = new PDO($dsn);
     } catch(PDOException $e) {
       die($e->getMessage());
     }

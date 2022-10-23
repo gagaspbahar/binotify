@@ -1,6 +1,10 @@
 <?php
-define('BASEURL', 'http://localhost/public');
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'phpmvc');
+
+require_once 'dotenv.php';
+(new DotEnv(__DIR__ .'/.env'))->load(); 
+
+define('BASEURL', getenv('BASEURL'));
+define('DB_HOST', getenv('DB_HOST'));
+define('DB_USER', getenv('DB_USER'));
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
+define('DB_NAME', getenv('DB_NAME'));
