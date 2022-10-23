@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/* html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: grey;
+} */
+
+section {
+    padding:4rem 10%;
+}
+
+.header {
+    position: sticky;
+    z-index: 1000;
+    background-color: black;
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    color: #19C5AC;
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: white;
+}
+
+.header .navbar a:hover{
+    color: #19C5AC;
+}
+
+.header .search {
+    width: 50%;
+    position: relative;
+    display: flex;
+}
+  
+.searchTerm {
+    width: 90%;
+    padding: 5px 5px;
+    height: 35px;
+    border-radius: 22px;
+    color: black;
+}
+
+.button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.user {
+    float: right;
+    padding: 20px 40px 0px 0px;
+    font-size: 24px;
+}
+
+.username {
+    color:#19C5AC;
+}
+
+.song {
+    padding-top: 20px;
+}
+
+.song h1 {
+    padding: 40px 0px 20px 100px;
+    font-size: 26px;
+}
+
+.song-list {
+    width: 70%;
+    margin: auto;
+}
+
+.song-card {
+    box-sizing: border-box;
+    padding: 15px 0px 15px 30px;
+    background-color: #EFEFEF;
+    margin-bottom: 10px;;
+    border-radius: 18px;
+    display: flex;
+}
+
+.song-card:hover {
+    background-color: #dbd9d9;
+}
+
+
+.song-card span{
+    font-size: 22px;
+    font-weight: 600;
+    /* padding-right: 20px; */
+    padding: 20px 10px 20px 0px;
+}
+
+.song-card img {
+    width: 80px;
+    height: 80px;
+    padding-right: 10px;
+}
+
+.song-card h5 {
+    font-size: 20px;
+}
+
+.song-card h5 .singer {
+    font-size: 14px;
+    color: #4C5262;
+}
+
+.song-card h5 .genre {
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 7px;
+    color: black;
+    background-color: #B4E4DC;
+}
+
+.song-card .year {
+    font-size: 18px;
+    color: #4C5262;
+    text-align: right;
+    padding: 25px 40px 20px 0px;
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
