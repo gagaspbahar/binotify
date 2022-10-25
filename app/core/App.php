@@ -9,7 +9,7 @@ class App {
   public function __construct()
   {
     $url = $this->parse_url();
-    if (!isset($_COOKIE['user'])){
+    if (!isset($_COOKIE['user']) && $url[0] == ''){
       $this->controller = 'Login';
     }
     else {

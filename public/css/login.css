@@ -1,0 +1,19 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.username-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+}
+

@@ -4,29 +4,46 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Login to Binotify</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../public/css/styles.css" />
+    <link rel="stylesheet" href="../../../public/css/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="">
-</head>
-
-<body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
     <![endif]-->
 
-  <h1>Login ke Binotify!</h1>
-  <form action="/api/auth/login.php" method="post">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username"><br>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password"><br>
-    <button type="submit">Login</button>
-  </form>
-</body>
+    <div class="container">
+      <div class="login-container">
+        <h1 class="header-title">Binotify</h1>
+        <p class="header-subtitle">To continue, login to Binotify.</p>
 
+        <form action="/api/auth/login.php" method="post">
+          <div class="username-form">
+            <label for="username">Username</label>
+            <input class="login-input" type="text" name="username" id="username" /><br />
+          </div>
+          <div class="username-form">
+          <label for="password">Password</label>
+          <input class="login-input" type="password" name="password" id="password" />
+          </div>
+          <br />
+          <button type="submit">Login</button>
+        </form>
+        <p class="signup">Don't have an account? <a href="/?register">Sign up</a></p>
+        
+      </div>
+    </div>
+  </body>
 </html>
