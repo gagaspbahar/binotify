@@ -21,51 +21,6 @@ class SongModel {
     $this->db->bind('id', $id);
     return $this->db->single();
   }
-
-  public function addSong($data)
-  {
-    $query = "INSERT INTO songs
-              VALUES
-              (:title, :artist, :genre, :year, :album, :lyrics)";
-    $this->db->query($query);
-    $this->db->bind('title', $data['title']);
-    $this->db->bind('artist', $data['artist']);
-    $this->db->bind('genre', $data['genre']);
-    $this->db->bind('year', $data['year']);
-    $this->db->bind('album', $data['album']);
-    $this->db->bind('lyrics', $data['lyrics']);
-    $this->db->execute();
-    return $this->db->rowCount();
-  }
-
-  public function deleteSong($id)
-  {
-    $query = "DELETE FROM songs WHERE id = :id";
-    $this->db->query($query);
-    $this->db->bind('id', $id);
-    $this->db->execute();
-    return $this->db->rowCount();
-  }
-
-  public function updateSong($data)
-  {
-    $query = "UPDATE songs SET
-                title = :title,
-                artist = :artist,
-                genre = :genre,
-                year = :year,
-                album = :album,
-                lyrics = :lyrics
-              WHERE id = :id";
-    $this->db->query($query);
-    $this->db->bind('title', $data['title']);
-    $this->db->bind('artist', $data['artist']);
-    $this->db->bind('genre', $data['genre']);
-    $this->db->bind('year', $data['year']);
-    $this->db->bind('album', $data['album']);
-  }
-
-
 }
 
 // class SongModel {
