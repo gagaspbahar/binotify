@@ -9,16 +9,21 @@ class App {
   public function __construct()
   {
     $url = $this->parse_url();
-    // var_dump($url);
-    if (file_exists('app/controllers/' . $url[0] . '.php')) {
-      $this->controller = $url[0];
-      unset($url[0]);
-    }
-    else if ($url[0] == '') {
-      $this->controller = 'Home';
+    if (!isset($_COOKIE['user'])){
+      $this->controller = 'Login';
     }
     else {
-      $this->controller = 'Error404';
+      // var_dump($url);
+      if (file_exists('app/controllers/' . $url[0] . '.php')) {
+        $this->controller = $url[0];
+        unset($url[0]);
+      }
+      else if ($url[0] == '') {
+        $this->controller = 'Home';
+      }
+      else {
+        $this->controller = 'Error404';
+      }
     }
     require_once 'app/controllers/' . $this->controller . '.php';
     $this->controller = new $this->controller;
