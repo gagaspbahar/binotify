@@ -12,6 +12,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="">
+  <script src="../../../public/js/register.js"></script>
 </head>
 
 <body>
@@ -22,13 +23,17 @@
   <h1>Register ke Binotify!</h1>
   <form action="/api/auth/register.php" method="post">
     <label for="username">Username</label>
-    <input type="text" name="username" id="username"><br>
+    <input type="text" name="username" id="username" onchange=checkUsername()><br>
+    <p id="username-error"></p>
     <label for="email">Email</label>
-    <input type="email" name="email" id="email"><br>
+    <input type="email" name="email" id="email" onchange=checkEmail()><br>
+    <p id="email-error"></p>
     <label for="password">Password</label>
-    <input type="password" name="password" id="password"><br>
+    <input type="password" name="password" id="password" onchange=checkPassword()><br>
+    <p id="password-error"></p>
     <label for="confirm-password">Confirm Password</label>
-    <input type="password" name="confirm-password" id="confirm-password"><br>
+    <input type="password" name="confirm-password" id="confirm-password" onchange=checkPassword()><br>
+    <p id="confirm-password-error"></p>
     <button type="submit">Register</button>
   </form>
 </body>

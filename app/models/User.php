@@ -23,15 +23,14 @@ class UserModel {
     return $this->db->single();
   }
 
+
   public function register($data)
   {
-    $query = "INSERT INTO users
-              VALUES
-              (:email, :password, :email, :password)";
+    $query = "INSERT INTO users (email, username, password, is_admin) values (:email, :username, :password, false)";
     $this->db->query($query);
-    $this->db->bind('name', $data['name']);
+    $this->db->bind('username', $data['username']);
     $this->db->bind('email', $data['email']);
-    $this->db->bind('password', $data['password']);
+    $this->db->bind('password', password_hash($data['password'], PASSWORD_DEFAULT));
     $this->db->execute();
     return $this->db->rowCount();
   }
