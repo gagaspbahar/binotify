@@ -16,8 +16,9 @@
 
     <body>
         <!-- ini buat test logout dan cookie -->
-        <?php if (isset($_COOKIE['user'])) {
-            echo "Hello, " . json_decode($_COOKIE['user'])->username;
+        <?php 
+        if (isset($_SESSION['username'])) {
+            echo "Hello, " . $_SESSION['username'];
         }
         ?>
         <a href="/api/auth/logout.php" > Logout </a>

@@ -1,7 +1,7 @@
 <?php
+session_start();
 
-if (isset($_COOKIE['user'])) {
-  unset($_COOKIE['user']);
-  setcookie('user', '', time() - 3600, '/'); // empty value and old timestamp
+if (isset($_SESSION['username'])) {
+  session_unset();
 }
 header('Location: ../../?home');
