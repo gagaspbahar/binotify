@@ -14,6 +14,9 @@ class App {
       $this->controller = $url[0];
       unset($url[0]);
     }
+    else if ($url[0] == '') {
+      $this->controller = 'Home';
+    }
     else {
       $this->controller = 'Error404';
     }

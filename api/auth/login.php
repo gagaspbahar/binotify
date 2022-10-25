@@ -19,7 +19,6 @@ if (isset($_POST['username'])) {
   if (password_verify($password, $result['password'])) {
     // TODO: Benerin cookie biar gaada password atau bikin session
     setcookie('user', json_encode($result), time() + 3600, '/');
-    echo "Hello, " . json_decode($_COOKIE['user'])->username;
     header('Location: ../../?home');
   } else {
     echo "Login Failed";
