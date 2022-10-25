@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <div class="main-contaner">
+        <div class="main-container">
             <div class="homepage">
                 <div class="side-navbar-container">
                    <img src="../../../public/img/logo.png" alt="" class="logo">
@@ -24,7 +24,7 @@
                         <ul>
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
                             <li><i class="fas fa-search"></i><a href="search.html"> Search </a></li>
-                            <li><i class="fas fa-list"></i><a href="album.html"> Album </a></li>
+                            <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
                             <hr class="rounded">
                             <li><a href="/?login"> Login </a></li>
                             <li><a href="/?register"> Sign Up </a></li>
@@ -37,7 +37,7 @@
                          <a href="album.html" class="user"> Hello, User </a>
                     </nav>
 
-                    <div class="song-container">
+                    <div class="album-container">
                         <h1> Album Collections </h1>
 
                         <div class="grid-container">

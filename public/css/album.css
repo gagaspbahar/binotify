@@ -84,113 +84,13 @@ hr.rounded {
 }
 
 /* SONG LIST */
-.song-container {
+.album-container {
   padding: 20px;
   color: white;
 }
 
-.song-container h1 {
-  padding-left: 20px;
-  padding-bottom: 20px;
-}
-
-.songlist {
-  padding: 0;
-}
-
-.songlist-row {
-  height: 100px;
-  padding: 15px 10px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.songlist-row:hover {
+.grid-item:hover {
   background-color: #282828;
-  border-radius: 5px;
-}
-
-.songlist-row span {
-  color: #939393;
-  font-weight: 200;
-}
-
-.songlist-row .song-count {
-  width: 5%;
-  align-self: center;
-  float: left;
-}
-
-.songlist-row .song-count img {
-  width: 20px;
-  visibility: hidden;
-  position: absolute;
-  cursor: pointer;
-}
-
-.songlist-row:hover .song-count img {
-  visibility: visible;
-}
-
-.songlist-row .song-count span {
-  visibility: visible;
-}
-
-.songlist-row:hover .song-count span {
-  visibility: hidden;
-}
-
-.songlist-row .song-image {
-  margin: 10px;
-  width: 10%;
-  float: left;
-  background-color: aqua;
-}
-
-.songlist-row .song-image img {
-  max-width: 100%;
-}
-
-.songlist-row .song-info {
-  width: 75%;
-  float: left;
-}
-
-.songlist-row .song-info span {
-  display: block;
-}
-
-.songlist-row .song-info .song-title {
-  color: #fff;
-}
-
-.songlist-row .song-releasedate {
-  width: 15%;
-  float: left;
-  text-align: right;
-}
-
-.songlist-row .song-genre {
-  width: 12%;
-  float: left;
-  text-align: right;
-}
-
-.songlist-row .trackOptions {
-  width: 5%;
-  float: left;
-  text-align: right;
-}
-
-.songlist-row .trackOptions img {
-  width: 15px;
-  visibility: hidden;
-  cursor: pointer;
-}
-
-.songlist-row:hover .trackOptions img {
-  visibility: visible;
 }
 
 .grid-container {
