@@ -32,7 +32,7 @@
                     </nav>
                 </div>
 
-                <div class="homepage-container">
+                <div class="albumpage-container">
                     <nav class="profile-navbar">
                          <a href="album.html" class="user"> Hello, User </a>
                     </nav>
@@ -43,7 +43,7 @@
                         <div class="grid-container">
                             <div class="grid-item">
                                 <div class='album-image'>
-                                <img src='../../../public/img/new jeans.jpeg'>
+                                <img src='../../../public/img/song-cover/new jeans.jpeg'>
                                 </div>
                                 <div>
                                     <ul>
