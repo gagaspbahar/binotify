@@ -56,12 +56,12 @@ class SongModel
       }
     }
     if (!isset($data['sort'])) {
-      $query .= " ORDER BY judul";
+      $query .= " ORDER BY lower(judul)";
     } else {
       $sign = substr($data['sort'], 0, 1);
       $sortby = substr($data['sort'], 1);
       if ($sortby == 'judul') {
-        $query .= " ORDER BY judul";
+        $query .= " ORDER BY lower(judul)";
       } else if ($sortby == 'tanggal_terbit') {
         $query .= " ORDER BY tanggal_terbit";
       }
