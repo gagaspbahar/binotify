@@ -56,17 +56,8 @@
                                     $db->query($query);
                                     $songs = $db->resultSet();
 
-                                    $songIDArray = array();
-                                    foreach ($songs as $song) {
-                                        array_push($songIDArray, $song['song_id']);
-                                    }
-
                                     $count = 1;
-                                    foreach ($songIDArray as $songID) {
-                                        $query = "SELECT * FROM songs WHERE song_id = :song_id";
-                                        $db->query($query);
-                                        $db->bind('song_id', $songID);
-                                        $song = $db->single();
+                                    foreach ($songs as $song) {
                                         echo "  <li class='songlist-row'>
                                                     <div class='song-count'>
                                                         <img class='play' src='../../../public/img/play-white.png'>

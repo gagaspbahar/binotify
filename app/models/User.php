@@ -23,6 +23,10 @@ class UserModel {
     return $this->db->single();
   }
 
+  public function getAllUser(){
+    $this->db->query('SELECT * FROM users');
+    return $this->db->resultSet();
+  }
 
   public function register($data)
   {

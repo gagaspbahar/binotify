@@ -4,38 +4,90 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../../public/css/styles.css" />
+    <link rel="stylesheet" href="../../../public/css/register.css" />
+    <script src="../../../public/js/register.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="">
-  <script src="../../../public/js/register.js"></script>
-</head>
-
-<body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
     <![endif]-->
 
-  <h1>Register ke Binotify!</h1>
-  <form action="/api/auth/register.php" method="post">
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" onchange=checkUsername()><br>
-    <p id="username-error"></p>
-    <label for="email">Email</label>
-    <input type="email" name="email" id="email" onchange=checkEmail()><br>
-    <p id="email-error"></p>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" onchange=checkPassword()><br>
-    <p id="password-error"></p>
-    <label for="confirm-password">Confirm Password</label>
-    <input type="password" name="confirm-password" id="confirm-password" onchange=checkPassword()><br>
-    <p id="confirm-password-error"></p>
-    <button type="submit">Register</button>
-  </form>
-</body>
-
+    <div class="container">
+      <div class="register-container">
+        <h1 class="header-title">Binotify</h1>
+        <h2 class="header-subtitle">Sign up for free to start listening.</h2>
+        <form action="/api/auth/register.php" method="post">
+          <div class="form-group">
+            <label for="username">Create an username.</label>
+            <input
+              class="register-input"
+              type="text"
+              name="username"
+              id="username"
+              onchange="checkUsername()"
+              placeholder="Enter your desired username."
+              required
+            />
+            <p id="username-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="email">What's your email?</label>
+            <input
+              class="register-input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email."
+              onchange="checkEmail()"
+              required
+            />
+            <p id="email-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="password">Create a password.</label>
+            <input
+              class="register-input"
+              type="password"
+              name="password"
+              id="password"
+              onchange="checkPassword()"
+              placeholder="Create a password."
+              required
+            />
+            <p id="password-error"></p>
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm your password.</label>
+            <input
+              class="register-input"
+              type="password"
+              name="confirm-password"
+              id="confirm-password"
+              onchange="checkPassword()"
+              placeholder="Enter your password again."
+            />
+            <p id="confirm-password-error"></p>
+          </div>
+          <div class="button-container">
+            <button type="submit" class="register-button">Sign up</button>
+          </div>
+        </form>
+        <p class="login">Have an account?</p>
+        <button class="login-button" onclick="window.location.href='/?login'">
+          Log in
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
