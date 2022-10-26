@@ -80,7 +80,7 @@
             <p id="confirm-password-error"></p>
           </div>
           <div class="button-container">
-            <button type="submit" class="register-button">Sign up</button>
+            <button type="submit" class="register-button" id="register-button" disabled>Sign up</button>
           </div>
         </form>
         <p class="login">Have an account?</p>

@@ -39,10 +39,12 @@ const checkUsername = () => {
           document.getElementById('username-error').innerHTML = response.message;
         }
       }
+      checkAll();
     }
 
     xhr.send(JSON.stringify({username: username}));
   }
+  checkAll();
 }
 
 const checkEmail = () => {
@@ -70,10 +72,12 @@ const checkEmail = () => {
           document.getElementById('email-error').innerHTML = response.message;
         }
       }
+      checkAll();
     }
 
     xhr.send(JSON.stringify({email: email}));
   }
+  checkAll();
 }
 
 const checkPassword = () => {
@@ -94,5 +98,15 @@ const checkPassword = () => {
       document.getElementById("confirm-password").style.borderColor = "green";
       document.getElementById('confirm-password-error').innerHTML = "";
     }
+  }
+  checkAll();
+}
+
+const checkAll = () => {
+  if (document.getElementById("username").style.borderColor == "green" && document.getElementById("email").style.borderColor == "green" && document.getElementById("password").style.borderColor == "green" && document.getElementById("confirm-password").style.borderColor == "green") {
+    document.getElementById('register-button').disabled = false
+  }
+  else {
+    document.getElementById('register-button').disabled = true
   }
 }
