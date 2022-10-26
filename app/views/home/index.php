@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../../../public/css/home.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="../../../public/js/utility.js"></script>
     </head>
 
     <body>
@@ -75,7 +76,7 @@
                 
                                                 <div class='song-info'>
                                                     
-                                                    <span class='song-title'><a class='detail' href='/?detaillagu'>$song[judul]</a></span>
+                                                    <span class='song-title'><a class='detail' href='/?song/$song[song_id]'>$song[judul]</a></span>
                                                     
                                                     <span class='singer'>$song[penyanyi]</span>
                                                 </div>

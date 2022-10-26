@@ -9,3 +9,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - UPLOAD_LIMIT=10M

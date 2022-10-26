@@ -46,20 +46,6 @@ seek.addEventListener("change", () => {
   track.currentTime = (seek.value * track.duration) / 100;
 });
 
-
-const getDuration = (length) => {
-  let minutes = Math.floor(length / 60);
-  let seconds = Math.floor(length - minutes * 60);
-  return `${minutes}:${seconds}`;
-}
-
-const getReleaseDate = (date) => {
-  let year = date.slice(0, 4);
-  let month = date.slice(5, 7);
-  let day = date.slice(8, 10);
-  return `${day}-${month}-${year}`;
-}
-
 const getSongDetail = (id) => {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", `../../api/music/detail.php?id=${id}`, true);

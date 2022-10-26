@@ -26,6 +26,19 @@ class SongModel
     return $this->db->single();
   }
 
+  public function insertSong($data){
+    $this->db->query('INSERT INTO ' . $this->table . ' (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path) VALUES (:judul, :penyanyi, :tanggal_terbit, :genre, :duration, :audio_path, :image_path)');
+    $this->db->bind('judul', $data['judul']);
+    $this->db->bind('penyanyi', $data['penyanyi']);
+    $this->db->bind('tanggal_terbit', $data['tanggal_terbit']);
+    $this->db->bind('genre', $data['genre']);
+    $this->db->bind('duration', $data['duration']);
+    $this->db->bind('audio_path', $data['audio_path']);
+    $this->db->bind('image_path', $data['image_path']);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
   public function findSong($data)
   {
     $query = "SELECT * FROM songs";

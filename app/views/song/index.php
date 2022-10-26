@@ -6,6 +6,7 @@
         <title> Binotify </title>
         <link rel="stylesheet" href="../../../public/css/songdetail.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="../../../public/js/utility.js"></script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
