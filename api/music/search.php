@@ -32,6 +32,6 @@ if($songs != null){
   echo json_encode($songs);
 }
 else{
-  http_response_code(500);
-  echo "Something went wrong.";
+  http_response_code(200);
+  echo json_encode(array('status' => 'error', 'message' => 'End of list.'));
 }
