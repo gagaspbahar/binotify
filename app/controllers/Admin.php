@@ -2,6 +2,12 @@
 
 class Admin extends Controller {
   public function index() {
-    $this->view('admin/index');
+    if(isset($_SESSION['is_admin'])){
+      if ($_SESSION['is_admin'] == 1) {
+        $this->view('admin/index');
+      } else {
+        header('Location: /?home');
+      }
+    }
   }
 }
