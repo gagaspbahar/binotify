@@ -28,7 +28,6 @@ const checkUsername = () => {
     xhr.open('POST', '../../api/auth/register.php', true);
     xhr.onload = function() {
       if (this.status == 200) {
-        console.log(this.responseText);
         let response = JSON.parse(this.responseText);
         if (response.status == "success") {
           document.getElementById("username").style.borderColor = "green";

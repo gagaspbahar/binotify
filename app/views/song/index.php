@@ -13,9 +13,8 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        
     </head>
-
-
     <body>
         <div class="main-contaner">
             <div class="homepage">
@@ -24,7 +23,7 @@
                    <nav class="navbar">
                         <ul>
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
-                            <li><i class="fas fa-search"></i><a href="search.html"> Search </a></li>
+                            <li><i class="fas fa-search"></i><a href="?search"> Search </a></li>
                             <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
                             <hr class="rounded">
                             <li><a href="/?login"> Login </a></li>
@@ -46,19 +45,20 @@
                             <div class='songlist-row'>
                                 <div class="column left">
                                     <div class="song-image-detail">
-                                        <img class='songimage' src='../../../public/img/song-cover/besideyou.jpeg'>
+                                        <img class='song-image' src='../../../public/img/binomify-logo.png'>
                                     </div>
                                 </div>
 
                                 <div class="column right">
 
                                     <div class='song-info'>
-                                        <span class='song-title'>beside you</span>
-                                        <span class='singer'>keshi</span>
-                                        <span class='release-date'>April 23, 2021</span>
+                                        <span class='song-title' id='song-title'>Loading title..</span>
+                                        <span class='song-artist' >Loading artist..</span>
+                                        <span class='release-date' id='song-release-date'>Loading..</span>
 
-                                        <span class='duration'><i class="fa fa-clock-o"></i>  3:45</span>
-                                        <span class='genre'>R&B</span>
+                                        <span class='duration'><i class="fa fa-clock-o"
+                                        id='song-duration'></i>  Loading..</span>
+                                        <span class='genre' id='song-genre'>R&B</span>
                             
                                     </div>
                                 </div>
@@ -73,14 +73,15 @@
                     <div id="songplayer-left">
                         <div class="content">
                             <span class="album-image">
-                                <img src="../../../public/img/song-cover/besideyou.jpeg" alt="album" class="album-img">
+                                <img id="song-album-image" src="../../../public/img/binomify-logo.png" alt="album" class="album-img">
                             </span>
                             <div class="trackInfo">
                                 <span class="trackName pointer">
-                                    <span> beside you </span>
+                                    <p class="song-track-title"
+                                    > loading title..</p>
                                 </span>
                                 <span class="artistName pointer">
-                                    <span> keshi </span>
+                                    <span class="song-track-artist"> loading artist..</span>
                                 </span>
                             </div>
                         </div>
@@ -140,55 +141,10 @@
                 </div>
             </div>
         </div>
+        <script src="../../../public/js/songdetail.js"></script>
+        <script>
+            getSongDetail(<?php echo $data['id'] ?>);
+        </script>
     </body>
 
-    <script>
-        let playButton = document.querySelector(".play");
-        let pauseButton = document.querySelector(".pause");
-        
-        let track = document.createElement("audio");
-        track.src = "../../../public/song/keshi - beside you.mp3";
-
-        function playSong() {
-            track.play();
-            playButton.style.display = "none";
-            pauseButton.style.display = "inline";
-        }
-
-        function pauseSong() {
-            track.pause();
-            playButton.style.display = "inline";
-            pauseButton.style.display = "none";
-        }
-
-        let currentStart = document.getElementById('currentStart');
-        let currentEnd = document.getElementById('currentEnd');
-        let seek = document.getElementById('seek');
-
-        track.addEventListener('timeupdate',()=>{
-            let music_curr = track.currentTime;
-            let music_dur = track.duration;
-
-            let min = Math.floor(music_dur/60);
-            let sec = Math.floor(music_dur%60);
-            if (sec<10) {
-                sec = `0${sec}`
-            }
-            currentEnd.innerText = `${min}:${sec}`;
-
-            let min1 = Math.floor(music_curr/60);
-            let sec1 = Math.floor(music_curr%60);
-            if (sec1<10) {
-                sec1 = `0${sec1}`
-            }
-            currentStart.innerText = `${min1}:${sec1}`;
-
-            let progressbar = parseInt((track.currentTime/track.duration)*100);
-            seek.value = progressbar;
-        })
-
-        seek.addEventListener('change', ()=>{
-            track.currentTime = seek.value * track.duration/100;
-        })
-    </script>
 </html>
