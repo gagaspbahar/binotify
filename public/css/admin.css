@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.homepage{
+    background-color: 	#212121;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.side-navbar-container{
+    background-color: #121212;
+    width: 20%;
+}
+
+.homepage-container {
+    width: 80%;
+}
+
+/* NAVBAR */
+.logo{
+    height: 50px;
+    margin: 30px;
+}
+
+hr.rounded {
+    border-top: 1px solid #b3b3b3;
+    margin-bottom: 10px;
+    background: #b3b3b3 ;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.navbar {
+    margin-left: 25px;
+}
+
+.navbar ul{
+    list-style-type: none;
+}
+
+.navbar ul li{
+    list-style-type: none;
+    margin-bottom: 15px;
+}
+
+.navbar ul li a{
+    font-size: 15px;
+    margin-left: 2px;
+    color: #b3b3b3;
+}
+
+.navbar a:hover{
+    color: white;
+}
+
+.fas{
+    color: #b3b3b3;
+    height: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.profile-navbar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.profile-navbar a.user {
+    font-size: 20px;
+    color: white;
+    float: right;
+}
+
+/* SONG LIST */
+.song-container {
+    padding: 20px;
+    color: white;
+}
+
+.top-10-newest {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.songlist {
+    padding: 0;
+    width: 90%;
+    align-self: center;
+    align-items: center;
+}
+
+.songlist-container {
+    width: 90%;
+    margin-left: 70px;
+}
+
+.songlist-row {
+    height: 100px;
+    padding: 10px 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.table-title {
+    height: 40px;
+    padding: 10px 5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.table-title span {
+    color: white;
+    font-weight: 200;
+    display: block;
+}
+
+.table-title .data {
+    width: 75%;
+    float: left;
+    /* margin-left: 20px; */
+}
+
+.table-title .song-count {
+    width: 10%;
+    float: left;
+}
+
+.username {
+    width: 30%;
+    float: left;
+    margin-left: 20px;
+}
+
+.email {
+    width: 30%;
+    float: left;
+    /* margin-left: 20px; */
+}
+
+.data-type {
+    float: center;
+}
+
+.table-title .data-type {
+    width: 30%;
+    float: center;
+    /* margin-left: 20px; */
+}
+
+.table-title .song-count .no-title, 
+.table-title .data .user-title,
+.table-title .data-type .type-title,
+.table-title .data .email-title {
+    width: 100%;
+    text-align: center;
+}
+
+.table-title .song-count .no-data, 
+.table-title .data .type-data{
+    width: 100%;
+    text-align: center;
+}
+
+.table-title .data .user-data {
+    text-align: left;
+}
+
+.data-title {
+    background-color:#535353;
+}
+
+.data-value:hover {
+    background-color: #282828;
+    border-radius: 5px;
+}
+
