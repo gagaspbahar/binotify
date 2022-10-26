@@ -46,7 +46,6 @@ class SongModel
     if (isset($data['judul'])) {
       $query .= " WHERE LOWER(judul) LIKE :judul";
       $where = true;
-      error_log(print_r($query, TRUE));
     }
     if (isset($data['genre'])) {
       if ($where) {
@@ -59,16 +58,17 @@ class SongModel
     if (!isset($data['sort'])) {
       $query .= " ORDER BY judul";
     } else {
-      $sign = array_shift($data['sort']);
-      if ($data['sort'] == 'judul') {
+      $sign = substr($data['sort'], 0, 1);
+      $sortby = substr($data['sort'], 1);
+      if ($sortby == 'judul') {
         $query .= " ORDER BY judul";
-      } else if ($data['sort'] == 'tanggal_terbit') {
+      } else if ($sortby == 'tanggal_terbit') {
         $query .= " ORDER BY tanggal_terbit";
-        if ($sign == '-') {
-          $query .= " DESC";
-        } else {
-          $query .= " ASC";
-        }
+      }
+      if ($sign == '-') {
+        $query .= " DESC";
+      } else {
+        $query .= " ASC";
       }
     }
 
@@ -77,7 +77,9 @@ class SongModel
     if (isset($data['page'])) {
       $query .= " OFFSET :offset";
     }
-    
+
+    // error_log(print_r($query, TRUE));
+
     $this->db->query($query);
     if (isset($data['judul'])) {
       $this->db->bind('judul', '%' . $data['judul'] . '%');

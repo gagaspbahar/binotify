@@ -22,10 +22,10 @@
 
     <select name="sort" id="sort">
       <option value="">none</option>
-      <option value="judul">judul asc</option>
+      <option value="_judul">judul asc</option>
       <option value="-judul">judul desc</option>
-      <option value="tahun_terbit">tahun terbit asc</option>
-      <option value="-tahun_terbit">tahun terbit desc</option>
+      <option value="_tanggal_terbit">tanggal terbit asc</option>
+      <option value="-tanggal_terbit">tanggal terbit desc</option>
     </select>
     <select name="filter" id="filter">
       <option value="">none</option>
@@ -33,6 +33,8 @@
       <option value="Rock">Rock</option>
       <option value="Pop">Pop</option>
     </select>
+
+    <input type="text" id="page"></input>
     
     <button type="button" onclick=searchSong()>Search</button>
     <div id="song-list"></div>
