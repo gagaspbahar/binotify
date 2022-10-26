@@ -164,8 +164,16 @@ hr.rounded {
     display: block;
 }
 
-.songlist-row .song-info .song-title {
+.songlist-row .song-info .song-title a.detail{
     color: #FFF;
+}
+
+a.detail{
+    color: #FFF;
+}
+
+a.detail:hover{
+    text-decoration: underline;
 }
 
 .songlist-row .song-releasedate {

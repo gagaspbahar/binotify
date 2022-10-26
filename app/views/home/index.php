@@ -49,6 +49,7 @@
                         <h2 class="top-10-newest">Top 10</h2>
 
                         <div class="songlist-container">
+
                             <ul class="songlist">
                                 <?php 
                                     $db = new Database;
@@ -58,33 +59,39 @@
 
                                     $count = 1;
                                     foreach ($songs as $song) {
-                                        echo "  <li class='songlist-row'>
-                                                    <div class='song-count'>
+                                        $song_id = $song['song_id'];
+                                        echo "  
+                                            <li class='songlist-row'>
+                                                <div class='song-count'>
+                                                    <a href='/?detailalbum'>
                                                         <img class='play' src='../../../public/img/play-white.png'>
-                                                        <span class='song-number'> $count.</span>
-                                                    </div>
-                    
-                                                    <div class='song-image'>
-                                                        <img class='songimage' src='../../../$song[image_path]'>
-                                                    </div>
-                    
-                                                    <div class='song-info'>
-                                                        <span class='song-title'>$song[judul]</span>
-                                                        <span class='singer'>$song[penyanyi]</span>
-                                                    </div>
-                    
-                                                    <div class='song-releasedate'>
-                                                        <span class='release-date'>$song[tanggal_terbit]</span>
-                                                    </div>
-                    
-                                                    <div class='song-genre'>
-                                                        <span class='genre'>$song[genre]</span>
-                                                    </div>
-                    
-                                                    <div class='trackOptions'>
-                                                        <img class='optionButton' src='../../../public/img/more.png'>
-                                                    </div>
-                                                </li>";
+                                                    </a>
+                                                    <span class='song-number'> $count.</span>
+                                                </div>
+                
+                                                <div class='song-image'>
+                                                    <img class='songimage' src='../../../$song[image_path]'>
+                                                </div>
+                
+                                                <div class='song-info'>
+                                                    
+                                                    <span class='song-title'><a class='detail' href='/?detaillagu'>$song[judul]</a></span>
+                                                    
+                                                    <span class='singer'>$song[penyanyi]</span>
+                                                </div>
+                
+                                                <div class='song-releasedate'>
+                                                    <span class='release-date'>$song[tanggal_terbit]</span>
+                                                </div>
+                
+                                                <div class='song-genre'>
+                                                    <span class='genre'>$song[genre]</span>
+                                                </div>
+                
+                                                <div class='trackOptions'>
+                                                    <img class='optionButton' src='../../../public/img/more.png'>
+                                                </div>
+                                            </li>";
                                         $count++;
                                     }
                                 ?>
