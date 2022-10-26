@@ -31,7 +31,7 @@
 
     <div class="container">
       <div class="login-container">
-        <h1 class="header-title">Binotify</h1>
+        <h1 class="header-title">Binotifyy</h1>
         <p class="header-subtitle">To continue, login to Binotify.</p>
 
         <form action="/api/auth/login.php" method="post">

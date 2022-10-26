@@ -1,3 +1,7 @@
+<?php
+    include_once 'app/core/Database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,6 +20,13 @@
     </head>
 
     <body>
+        <!-- ini buat test logout dan cookie -->
+        <?php 
+        if (isset($_SESSION['username'])) {
+            echo "Hello, " . $_SESSION['username'];
+        }
+        ?>
+        <a href="/api/auth/logout.php" > Logout </a>
         <div class="main-container">
             <div class="homepage">
                 <div class="side-navbar-container">
@@ -41,56 +52,33 @@
                         <h1> Album Collections </h1>
 
                         <div class="grid-container">
-                            <div class="grid-item">
-                                <div class='album-image'>
-                                <img src='../../../public/img/song-cover/new jeans.jpeg'>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li class='album-title'>NewJeans 1st EP'New Jeans'</li>
-                                        <li class='album-singer'>New Jeans</li>
-                                        <li class='album-year'>2022</li>
-                                        <li class='album-genre'>Pop</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="grid-item">2</div>
-                            <div class="grid-item">3</div>
-                            <div class="grid-item">4</div>
-                            <div class="grid-item">5</div>
-                            <div class="grid-item">6</div>
-                            <div class="grid-item">7</div>
-                            <div class="grid-item">8</div>
-                            <div class="grid-item">9</div>
+                            <?php 
+                                $db = new Database;
+                                $query = "SELECT album_id, judul, penyanyi, image_path, extract(year from TANGGAL_TERBIT) AS TAHUN_TERBIT, genre FROM albums ORDER BY LOWER(JUDUL);";
+                                $db->query($query);
+                                $albums = $db->resultSet();
+                                foreach ($albums as $album) {
+                                    $album_id = $album['album_id'];
+                                echo "
+                                    <div class='grid-item'>
+                                        <div class='album-image'>
+                                        <img src='../../../$album[image_path]'>
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li class='album-title'>$album[judul]</li>
+                                                <li class='album-singer'>$album[penyanyi]</li>
+                                                <li class='album-year'>$album[tahun_terbit]</li>
+                                                <li class='album-genre'>$album[genre]</li>
+                                            </ul>
+                                        </div>
+                                    </div>";
+                                }
+                            ?>    
                         </div>
-
                     </div>
-
-                </div>
-    
+                </div>  
             </div>
-
-            
-
-                    <!-- <div class="playlist-card">
-                        <i class="fas fa-home"></i>
-                        <h3 class="playlist-main-content">Home</h3>
-    
-                    </div>
-                    <div class="playlist-card">
-                       
-                        <i class="fas fa-search"></i>
-                        <h3 class="playlist-main-content">Search</h3>
-    
-                    </div>
-                    <div class="playlist-card">
-                        <i class="fas fa-list"></i>
-                        <h3 class="playlist-main-content">Play List</h3>
-                    </div> -->
-            
-
-            <!-- <div class="music-player"> 
-            </div> -->
         </div>
     </body>
 </html>
