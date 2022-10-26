@@ -21,7 +21,7 @@
   width: 20%;
 }
 
-.homepage-container {
+.albumpage-container {
   width: 80%;
 }
 
@@ -83,9 +83,14 @@ hr.rounded {
   float: right;
 }
 
-/* SONG LIST */
+/* ALBUM LIST */
 .album-container {
   padding: 20px;
+  color: white;
+}
+
+.album-container h1 {
+  padding-left: 30px;
   color: white;
 }
 
@@ -94,6 +99,7 @@ hr.rounded {
 }
 
 .grid-container {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: 220px 220px 220px 220px;
   grid-auto-rows: 330px;
@@ -129,11 +135,9 @@ hr.rounded {
   border-radius: 10px;
 }
 
-.album-singer {
-  color: #a7a7a7;
-}
-
-.album-year {
+.album-singer,
+.album-year,
+.album-genre {
   color: #a7a7a7;
 }
 
