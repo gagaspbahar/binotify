@@ -29,7 +29,7 @@
                     <nav class="navbar">
                         <ul>
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
-                            <li><i class="fas fa-search"></i><a href="search.html"> Search </a></li>
+                            <li><i class="fas fa-search"></i><a href="/?search"> Search </a></li>
                             <li><i class="fas fa-list"></i><a href="album.html"> Album </a></li>
                             <hr class="rounded">
                             <li><a href="/?login"> Login </a></li>
