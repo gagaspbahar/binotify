@@ -9,5 +9,8 @@ class Admin extends Controller {
         header('Location: /?home');
       }
     }
+    else {
+      header('Location: /?home');
+    }
   }
 }
