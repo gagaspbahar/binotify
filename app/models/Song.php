@@ -39,6 +39,16 @@ class SongModel
     return $this->db->rowCount();
   }
 
+  public function editSong($data) {
+    $this->db->query('UPDATE ' . $this->table . ' SET judul = :judul, tanggal_terbit = :tanggal_terbit, genre = :genre, image_path = :image_path WHERE song_id = :id');
+    $this->db->bind('judul', $data['judul']);
+    $this->db->bind('tanggal_terbit', $data['tanggal_terbit']);
+    $this->db->bind('genre', $data['genre']);
+    $this->db->bind('image_path', $data['image_path']);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
   public function findSong($data)
   {
     $query = "SELECT * FROM songs";

@@ -60,6 +60,29 @@
                                     <span class='genre' id='song-genre'>R&B</span>
 
                                 </div>
+
+                                <?php
+                                    if(isset($_SESSION['is_admin'])){
+                                        if ($_SESSION['is_admin'] == 1) {
+                                            echo "
+                                            <div class='edit'>
+                                                <a class='button primary edit' href='/?songedit'><i class='fa fa-edit'></i> </a>
+                                             </div>  
+                                            ";
+                                    } else {
+                                        echo "
+                                     
+                                        ";
+                                    }
+                                } else {
+                                    echo "
+                                
+                                    ";
+                                }
+                                ?>
+                                <!-- <div class="edit">
+                                    <a class="button primary edit" href="/?songedit"><i class="fa fa-edit"></i> </a>
+                                </div> -->
                             </div>
                         </div>
                     </div>

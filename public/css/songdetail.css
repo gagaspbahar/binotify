@@ -12,7 +12,7 @@
 .homepage{
     background-color: 	#212121;
     /* height: 100vh; */
-    height:90vh;
+    min-height:100vh;
     display: flex;
     overflow: hidden;
 }
@@ -333,4 +333,58 @@ hr.rounded {
 
 .volumeBar .progressBar {
     width: 125px;
+}
+
+.edit .fa {
+    color: #a0a0a0;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.delete-song {
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #b3b3b3;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border-style: none;
+    /* width: 10%; */
+    width: 100px;
+    margin:10px
+}
+
+.delete-song:hover {
+    background-color: #D11A2A;
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+
+.savechanges-button {
+    width: 30%;
+    padding: 5px 8px;
+    border-radius: 15px;
+    background-color:#1ed760 ;
+    border-style: none;
+}
+
+.savechanges-button:hover {
+    background-color: #60b77e;
+    transition-duration: 0.2s;
+}
+
+.cancel-button {
+    width: 30%;
+    padding: 5px 6px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border-style: 0.8px solid;
+}
+
+.cancel-button:hover {
+    background-color: #1ed760;
 }
