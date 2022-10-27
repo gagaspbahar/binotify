@@ -34,7 +34,7 @@
                    <nav class="navbar">
                         <ul>
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
-                            <li><i class="fas fa-search"></i><a href="search.html"> Search </a></li>
+                            <li><i class="fas fa-search"></i><a href="/?search"> Search </a></li>
                             <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
                             <hr class="rounded">
                             <li><a href="/?login"> Login </a></li>
@@ -61,17 +61,19 @@
                                     $album_id = $album['album_id'];
                                 echo "
                                     <div class='grid-item'>
-                                        <div class='album-image'>
-                                        <img src='../../../$album[image_path]'>
-                                        </div>
-                                        <div>
-                                            <ul>
-                                                <li class='album-title'>$album[judul]</li>
-                                                <li class='album-singer'>$album[penyanyi]</li>
-                                                <li class='album-year'>$album[tahun_terbit]</li>
-                                                <li class='album-genre'>$album[genre]</li>
-                                            </ul>
-                                        </div>
+                                        <a class='detail' href='/?detailalbum/$album[album_id]'>
+                                            <div class='album-image'>
+                                            <img src='../../../$album[image_path]'>
+                                            </div>
+                                            <div>
+                                                <ul>
+                                                    <li class='album-title'>$album[judul]</li>
+                                                    <li class='album-singer'>$album[penyanyi]</li>
+                                                    <li class='album-year'>$album[tahun_terbit]</li>
+                                                    <li class='album-genre'>$album[genre]</li>
+                                                </ul>
+                                            </div>
+                                        </a>
                                     </div>";
                                 }
                             ?>    

@@ -9,20 +9,28 @@
   text-transform: capitalize;
 }
 
+.main-container {
+  min-height: 100vh;
+  background-color: #1ed760;
+}
+
 .homepage {
   background-color: #212121;
   /* height: 100vh; */
   display: flex;
   overflow: hidden;
+  height: 100%;
 }
 
 .side-navbar-container {
   background-color: #121212;
   width: 20%;
+  min-height: 100vh;
 }
 
 .detailalbum-container {
   width: 80%;
+  min-height: 100vh;
 }
 
 /* NAVBAR */

@@ -102,10 +102,13 @@ hr.rounded {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 220px 220px 220px 220px;
+  grid-auto-columns: 220px;
   grid-auto-rows: 330px;
-  row-gap: 50px;
+  row-gap: 10%;
   column-gap: 50px;
-  justify-content: space-evenly;
+  justify-content: center;
+  overflow: visible;
+  grid-auto-flow: row dense;
 }
 
 .grid-item {
@@ -143,4 +146,10 @@ hr.rounded {
 
 ul {
   list-style-type: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 220px;
+  }
 }

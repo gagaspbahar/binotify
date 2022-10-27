@@ -1,3 +1,7 @@
+<?php
+    include_once 'app/core/Database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,117 +40,68 @@
                     <nav class="profile-navbar">
                          <a href="album.html" class="user"> Hello, User </a>
                     </nav>
-                    <a href="#" class="previous-button">&#8249;</a>
+                    <a href="/?album" class="previous-button">&#8249;</a>
                     <div class="albuminfo-container">
                         <div class="album-photo">
-                            <img src='../../../public/img/song-cover/new jeans.jpeg'>
+                            <img class="album-img" src="../../../public/img/binomify-logo.png">
                         </div>
                         <div class="album-info">
                             <ul>
                                 <li class='album'>ALBUM</li>
-                                <li class='album-title'>NewJeans 1st EP'New Jeans'</li>
-                                <li class='album-year-genre'>New Jeans • 2022 • Pop</li>
-                                <li class='album-duration'>28 minutes</li>
+                                <li class='album-title'>Loading...</li>
+                                <li class='album-artist'>Loading...</li>
+                                <ul>
+                                    <li class='album-year'>2022</li>
+                                    <li class='album-genre'>Pop</li>
+                                    <li class='album-duration'>28 minutes</li>
+                                </ul>
                             </ul>
                         </div>
                     </div>
                     <div class="song-container">
                         <ul class="songlist">
-                            <li class='songlist-row'>
-                                <div class='song-count'>
-                                    <img class='play' src='../../../public/img/play-white.png'>
-                                    <span class='song-number'> 1.</span>
-                                </div>
-                                <div class='song-info'>
-                                    <span class='song-title'>Cookie</span>
-                                    <span class='singer'>New Jeans</span>
-                                </div>
+                            <?php 
+                                $album_id = $data['id'];
+                                $db = new Database;
+                                $query = "SELECT * FROM songs WHERE album_id = '$album_id'";
+                                $db->query($query);
+                                $songs = $db->resultSet();
+                                foreach ($songs as $song) {
+                                    $song_id = $song['song_id'];
+                                echo "
+                                    <li class='songlist-row'>
+                                        <div class='song-count'>
+                                            <img class='play' src='../../../public/img/play-white.png'>
+                                            <span class='song-number'> 1.</span>
+                                        </div>
+                                        <div class='song-info'>
+                                            <span class='song-title'>$song[judul]</span>
+                                            <span class='singer'>$song[penyanyi]</span>
+                                        </div>
 
-                                <div class='song-releasedate'>
-                                    <span class='release-date'>28 April 2022</span>
-                                </div>
+                                        <div class='song-releasedate'>
+                                            <span class='release-date'>$song[tanggal_terbit]</span>
+                                        </div>
 
-                                <div class='song-genre'>
-                                    <span class='genre'>Pop</span>
-                                </div>
+                                        <div class='song-genre'>
+                                            <span class='genre'>$song[genre]</span>
+                                        </div>
 
-                                <div class='trackOptions'>
-                                    <img class='optionButton' src='../../../public/img/more.png'>
-                                </div>
-                            </li>
-                            <ul class="songlist">
-                            <li class='songlist-row'>
-                                <div class='song-count'>
-                                    <img class='play' src='../../../public/img/play-white.png'>
-                                    <span class='song-number'> 2.</span>
-                                </div>
-                                <div class='song-info'>
-                                    <span class='song-title'>Hype Boy</span>
-                                    <span class='singer'>New Jeans</span>
-                                </div>
-
-                                <div class='song-releasedate'>
-                                    <span class='release-date'>28 April 2022</span>
-                                </div>
-
-                                <div class='song-genre'>
-                                    <span class='genre'>Pop</span>
-                                </div>
-
-                                <div class='trackOptions'>
-                                    <img class='optionButton' src='../../../public/img/more.png'>
-                                </div>
-                            </li>
-                            <ul class="songlist">
-                            <li class='songlist-row'>
-                                <div class='song-count'>
-                                    <img class='play' src='../../../public/img/play-white.png'>
-                                    <span class='song-number'> 3.</span>
-                                </div>
-                                <div class='song-info'>
-                                    <span class='song-title'>Attention</span>
-                                    <span class='singer'>New Jeans</span>
-                                </div>
-
-                                <div class='song-releasedate'>
-                                    <span class='release-date'>28 April 2022</span>
-                                </div>
-
-                                <div class='song-genre'>
-                                    <span class='genre'>Pop</span>
-                                </div>
-
-                                <div class='trackOptions'>
-                                    <img class='optionButton' src='../../../public/img/more.png'>
-                                </div>
-                            </li>
-                            <ul class="songlist">
-                            <li class='songlist-row'>
-                                <div class='song-count'>
-                                    <img class='play' src='../../../public/img/play-white.png'>
-                                    <span class='song-number'> 4.</span>
-                                </div>
-                                <div class='song-info'>
-                                    <span class='song-title'>Hurt</span>
-                                    <span class='singer'>New Jeans</span>
-                                </div>
-
-                                <div class='song-releasedate'>
-                                    <span class='release-date'>28 April 2022</span>
-                                </div>
-
-                                <div class='song-genre'>
-                                    <span class='genre'>Pop</span>
-                                </div>
-
-                                <div class='trackOptions'>
-                                    <img class='optionButton' src='../../../public/img/more.png'>
-                                </div>
-                            </li>
+                                        <div class='trackOptions'>
+                                            <img class='optionButton' src='../../../public/img/more.png'>
+                                        </div>
+                                    </li>
+                                    ";
+                                }
+                                ?>     
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="../../../public/js/albumdetail.js"></script>
+        <script>
+            getAlbumDetail(<?php echo $data['id'] ?>);
+        </script>
     </body>
 </html>
