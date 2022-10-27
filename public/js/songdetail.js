@@ -4,10 +4,19 @@ let pauseButton = document.querySelector(".pause");
 let track = document.createElement("audio");
 track.src = "../../../public/song/keshi - beside you.mp3";
 
-function playSong() {
-  track.play();
-  playButton.style.display = "none";
-  pauseButton.style.display = "inline";
+function playSong(isGuest) {
+  if (isGuest && checkGuestSongCount()){
+    if (track.currentTime == 0) {
+      incrementGuestSongCount();
+    }
+    track.play();
+    playButton.style.display = "none";
+    pauseButton.style.display = "inline";
+  } else {
+    track.play();
+    playButton.style.display = "none";
+    pauseButton.style.display = "inline";
+  }
 }
 
 function pauseSong() {

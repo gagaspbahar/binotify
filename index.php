@@ -4,7 +4,6 @@ if(!session_id()) session_start();
 require_once 'app/init.php';
 $app = new App;
 
-
 ?>
 
 
@@ -17,7 +16,7 @@ $app = new App;
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Binomify</title>
+    <title>Binotify</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">

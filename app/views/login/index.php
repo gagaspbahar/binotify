@@ -31,7 +31,7 @@
 
     <div class="container">
       <div class="login-container">
-        <h1 class="header-title">Binotifyy</h1>
+        <h1 class="header-title">Binotify</h1>
         <p class="header-subtitle">To continue, login to Binotify.</p>
 
         <form action="/api/auth/login.php" method="post">
@@ -75,6 +75,13 @@
           onclick="window.location.href='/?register'"
         >
           Sign Up
+        </button>
+        <br />
+        <button
+          class="signup-button"
+          onclick="window.location.href='/api/auth/guest.php'"
+        >
+          or login as guest
         </button>
       </div>
     </div>
