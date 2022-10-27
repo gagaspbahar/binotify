@@ -7,7 +7,7 @@ $song_model = new SongModel();
 
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
-  $song = $song_model->getSongById($id);
+  $song = $song_model->getSongWithAlbumById($id);
   if($song != null){
     http_response_code(200);
     echo json_encode($song);

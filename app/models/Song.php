@@ -26,6 +26,23 @@ class SongModel
     return $this->db->single();
   }
 
+  public function getSongWithAlbumById($id){
+    $this->db->query("select
+    s.*,
+    (case
+      when a.judul is null then 'No Album'
+      else a.judul
+    end) as judul_album
+  from
+    songs s
+  left join albums a on
+    s.album_id = a.album_id
+  where
+    s.song_id = :id");
+    $this->db->bind('id', $id);
+    return $this->db->single();
+  }
+
   public function insertSong($data){
     $this->db->query('INSERT INTO ' . $this->table . ' (judul, penyanyi, tanggal_terbit, genre, duration, audio_path, image_path) VALUES (:judul, :penyanyi, :tanggal_terbit, :genre, :duration, :audio_path, :image_path)');
     $this->db->bind('judul', $data['judul']);
