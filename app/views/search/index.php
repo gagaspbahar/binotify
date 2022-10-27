@@ -17,6 +17,10 @@
     </head>
 
     <body>
+        <script>
+            searchSong("<?php echo $data['path'] ?>");
+        </script>
+
         <div class="main-contaner">
             <div class="homepage">
                 <div class="side-navbar-container">
