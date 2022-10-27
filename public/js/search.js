@@ -1,22 +1,21 @@
 function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
-  var vars = query.split('&');
+  var vars = query.split("&");
   for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split('=');
-      if (decodeURIComponent(pair[0]) == variable) {
-          return decodeURIComponent(pair[1]);
-      }
+    var pair = vars[i].split("=");
+    if (decodeURIComponent(pair[0]) == variable) {
+      return decodeURIComponent(pair[1]);
+    }
   }
-  console.log('Query variable %s not found', variable);
+  console.log("Query variable %s not found", variable);
 }
 
 function updateQueryStringParameter(uri, key, value) {
   var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+  var separator = uri.indexOf("?") !== -1 ? "&" : "?";
   if (uri.match(re)) {
-    return uri.replace(re, '$1' + key + "=" + value + '$2');
-  }
-  else {
+    return uri.replace(re, "$1" + key + "=" + value + "$2");
+  } else {
     return uri + separator + key + "=" + value;
   }
 }
@@ -24,8 +23,8 @@ function updateQueryStringParameter(uri, key, value) {
 const searchSong = (data = "") => {
   let base_url = "../../api/music/search.php?";
   let add_url = "";
-  
-  try{
+
+  try {
     const title = document.getElementById("search-input").value;
     const sort = document.getElementById("sort").value;
     const filter = document.getElementById("filter").value;
@@ -46,43 +45,42 @@ const searchSong = (data = "") => {
   } catch (e) {
     console.log(e);
   }
-  
 
   const xhr = new XMLHttpRequest();
 
-  try{
-    document.getElementById("loading-msg").innerHTML = "Loading..";
-  } catch {
-    // do na na
-  }
 
-  if(data != ""){
+  if (data != "") {
     final_url = base_url + data;
     add_url = data;
   } else {
     final_url = base_url + add_url;
   }
 
-  if(!final_url.includes("page=")){
-    console.log('masuk')
+  if (!final_url.includes("page=")) {
+    console.log("masuk");
     final_url += "&page=1";
     add_url += "&page=1";
   }
 
   xhr.open("GET", final_url, true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      document.getElementById("loading-msg").innerHTML = "";
-      } else{
-        document.getElementById("loading-msg").innerHTML = "Loading..";
-      }
-  }
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = function () {
     if (this.status == 200) {
       let response = JSON.parse(this.responseText);
       let songList = document.getElementById("song-list");
       songList.innerHTML = "";
-      window.history.pushState("","","/?search/" + add_url);
+      window.history.pushState("", "", "/?search/" + add_url);
       let count = 1 + (parseInt(getQueryVariable("page")) - 1) * 5;
       response.forEach((song) => {
         songList.innerHTML += `
@@ -98,12 +96,16 @@ const searchSong = (data = "") => {
               </div>
 
               <div class='song-info'>
-                <span class='song-title'><a class='detail' href='/?song/${song.song_id}'>${song.judul}</a></span>
+                <span class='song-title'><a class='detail' href='/?song/${
+                  song.song_id
+                }'>${song.judul}</a></span>
                 <span class='singer'>${song.penyanyi}</span>
               </div>
 
               <div class='song-releasedate'>
-                  <span class='release-date'>${getReleaseDate(song.tanggal_terbit)}</span>
+                  <span class='release-date'>${getReleaseDate(
+                    song.tanggal_terbit
+                  )}</span>
               </div>
 
               <div class='song-genre'>
@@ -115,7 +117,7 @@ const searchSong = (data = "") => {
               </div>
             </div>
           `;
-        count++; 
+        count++;
       });
     }
   };
@@ -123,18 +125,26 @@ const searchSong = (data = "") => {
 };
 
 const prevPage = () => {
-  let newPage = parseInt(getQueryVariable("page")) - 1
-  if (newPage == 0){
-    newPage = 1
+  let newPage = parseInt(getQueryVariable("page")) - 1;
+  if (newPage == 0) {
+    newPage = 1;
   }
 
-  const link = updateQueryStringParameter(window.location.href, "page", newPage);
-  
-  searchSong((link.split("?")[1]).split("/")[1]);
-}
+  const link = updateQueryStringParameter(
+    window.location.href,
+    "page",
+    newPage
+  );
+
+  searchSong(link.split("?")[1].split("/")[1]);
+};
 
 const nextPage = () => {
-  let newPage = parseInt(getQueryVariable("page")) + 1
-  const link = updateQueryStringParameter(window.location.href, "page", newPage);
-  searchSong((link.split("?")[1]).split("/")[1]);
-}
+  let newPage = parseInt(getQueryVariable("page")) + 1;
+  const link = updateQueryStringParameter(
+    window.location.href,
+    "page",
+    newPage
+  );
+  searchSong(link.split("?")[1].split("/")[1]);
+};

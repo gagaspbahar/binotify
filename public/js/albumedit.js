@@ -9,6 +9,18 @@ const submitForm = () => {
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "../../api/album/edit.php", true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = function () {
     if (this.status === 200) {
       alert("Edit album berhasil!");
@@ -28,6 +40,18 @@ const cancelForm = () => {
 const getAlbumDetail = (id) => {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", `../../api/album/detail.php?id=${id}`, true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = function () {
     if (this.status == 200) {
       let response = JSON.parse(this.responseText);

@@ -50,8 +50,6 @@
 
                     <div class="song-container">
                         <h1> Good Afternoon </h1>
-                        <p id="loading-msg"> Loading.. </p>
-
                         <div class="select">
                             <select name="filter" id="filter" onchange=searchSong()>
                                 <option value="Pop">Pop</option>

@@ -20,6 +20,18 @@ const saveChanges = () => {
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "../../api/music/edit.php", true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = () => {
     if (xhr.status === 200) {
       console.log("success");
@@ -35,6 +47,18 @@ const saveChanges = () => {
 const getSongDetail = (id) => {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", `../../api/music/detail.php?id=${id}`, true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = function () {
     if (this.status == 200) {
       let response = JSON.parse(this.responseText);
@@ -58,6 +82,18 @@ const cancelEdit = () => {
 const deleteSong = () => {
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "../../api/music/delete.php", true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = () => {
     if (xhr.status === 200) {
       window.location.href = "/?home";

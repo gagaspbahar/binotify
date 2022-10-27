@@ -58,6 +58,18 @@ seek.addEventListener("change", () => {
 const getSongDetail = (id) => {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", `../../api/music/detail.php?id=${id}`, true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = function () {
     if (this.status == 200) {
       let response = JSON.parse(this.responseText);
@@ -66,7 +78,7 @@ const getSongDetail = (id) => {
       document.querySelector(".song-track-title").innerHTML = song.judul;
       document.querySelector(".song-artist").innerHTML = song.penyanyi;
       document.querySelector(".song-track-artist").innerHTML = song.penyanyi;
-      document.querySelector(".song-album").innerHTML += "<a href='/?album/detail/" + song.album_id+ "'>" + song.judul_album + "</a>";
+      document.querySelector(".song-album").innerHTML += song.judul_album = "No Album" ? "No Album" : ("<a href='/?album/detail/" + song.album_id+ "'>" + song.judul_album + "</a>");
       document.querySelector(".genre").innerHTML = song.genre;
       document.querySelector(".duration").innerHTML = getDuration(song.duration);
       document.getElementById("song-release-date").innerHTML = getReleaseDate(song.tanggal_terbit);

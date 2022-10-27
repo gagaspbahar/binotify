@@ -21,6 +21,18 @@ const submitForm = () => {
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", "../../api/music/upload.php", true);
+  try {
+    document.getElementById("universal-loading").innerHTML = "Loading...";
+  } catch {
+    // do na na
+  }
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("universal-loading").innerHTML = "";
+    } else {
+      document.getElementById("universal-loading").innerHTML = "Loading...";
+    }
+  };
   xhr.onload = function () {
     if (this.status === 200) {
       alert("Add song success :D");
