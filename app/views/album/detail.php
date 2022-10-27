@@ -89,7 +89,7 @@
                                 $songs = $db->resultSet();
                                 $count = 1;
                                 foreach ($songs as $song) {
-                                    $const++;
+                                    $count++;
                                     $song_id = $song['song_id'];
                                     $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                     echo "
