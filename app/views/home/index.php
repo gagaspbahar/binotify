@@ -38,7 +38,7 @@
 
                 <div class="homepage-container">
                     <nav class="profile-navbar">
-                        <h1 class="user"> Hello, <h2 class="username"><?php echo $_SESSION['username'] ?> </h2> <i class="fa fa-user"></i> </h1>
+                        <h1 class="user"> Hello, <h2 class="username"><?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </h2> <i class="fa fa-user"></i> </h1>
                     </nav>
 
                     <div class="song-container">

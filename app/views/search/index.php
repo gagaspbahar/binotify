@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="username-container">
-                        <h1 class="user"> Hello, <h2 class="username"><?php echo $_SESSION['username'] ?> </h2> <i class="fa fa-user"></i> </h1>
+                        <h1 class="user"> Hello, <h2 class="username"><?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </h2> <i class="fa fa-user"></i> </h1>
                     </div>
                         <!-- <a href="album.html" class="user"> Hello, </a> -->
                   </nav>
