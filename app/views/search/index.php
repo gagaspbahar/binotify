@@ -51,6 +51,23 @@
                     <div class="song-container">
                         <h1> Good Afternoon </h1>
 
+                        <div class="select">
+                            <select name="filter" id="filter">
+                                <option value="Pop">Pop</option>
+                                <option value="Jazz">Jazz</option>
+                                <option value="R&B">R&B</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Soul">Soul</option>
+                                <option value="Classic">Classic</option>
+                                <option value="Contemporary">Contemporary</option>
+                                <option value="Country">Country</option>
+                                <option value="KPop">KPop</option>
+                                <option value="" selected>Filter Genre</option>
+                            </select>
+
+                        </div>
+
+                        <div class="select">
                         <select name="sort" id="sort">
                           <option value="">none</option>
                           <option value="_judul">judul asc</option>
@@ -58,18 +75,8 @@
                           <option value="_tanggal_terbit">tanggal terbit asc</option>
                           <option value="-tanggal_terbit">tanggal terbit desc</option>
                         </select>
-                        <select name="filter" id="filter">
-                        <option value="Pop">Pop</option>
-                        <option value="Jazz">Jazz</option>
-                        <option value="R&B">R&B</option>
-                        <option value="Rock">Rock</option>
-                        <option value="Soul">Soul</option>
-                        <option value="Classic">Classic</option>
-                        <option value="Contemporary">Contemporary</option>
-                        <option value="Country">Country</option>
-                        <option value="KPop">KPop</option>
-                        <option value="" selected>select genre</option>
-                        </select>
+                        </div>
+                
 
                         <input type="text" id="page"></input>
 
@@ -84,11 +91,11 @@
                           </div>
 
                           <div class='song-info'>
-                              <span class='song-title'> Title </span>
+                              <span class='song-title'> Title<i class="fa fa-caret-down"></i><i class="fa fa-caret-up"></i> </span>
                           </div>
 
                           <div class='song-releasedate'>
-                              <span class='release-date'>Date</span>
+                              <span class='release-date'>Date<i class="fa fa-caret-down"></i><i class="fa fa-caret-up"></i></span>
                           </div>
 
                           <div class='song-genre'>

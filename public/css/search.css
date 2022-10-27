@@ -166,10 +166,69 @@ hr.rounded {
     cursor: pointer;
 }
 
+select {
+    /* Reset Select */
+    margin-left: 10px;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #fff;
+    /* background-color: #5c6664; */
+    background-color: transparent;
+    background-image: none;
+    cursor: pointer;
+    float: right;
+    bottom:100%;
+    border-bottom: 1px solid transparent
+}
+
+select::-ms-expand {
+    display: none;
+    background-color: #282828;
+}
+
+/* kotak selectnya */
+.select {
+    text-align: right;
+    position: relative;
+    display: flex;
+    width: 9em;
+    height: 1.5em;
+    border-radius: .25em;
+    overflow: hidden;
+    float: right;
+    text-align-last:right;
+    padding-right: 29px;
+    direction: rtl;
+}
+
+#filter * {
+    background-color: #282828;
+}
+
+#sort * {
+    background-color: #282828;
+}
 
 
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.2em;
+    background-color: #212121;
+    transition: .25s all ease;
+    pointer-events: none;
+}
 
-
+.select:hover::after {
+    color: #1DB954;
+}
 
 /* SONG LIST */
 .song-container {
