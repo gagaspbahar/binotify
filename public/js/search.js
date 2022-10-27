@@ -22,7 +22,6 @@ function updateQueryStringParameter(uri, key, value) {
 }
 
 const searchSong = (data = "") => {
-  console.log("terpanggil");
   let base_url = "../../api/music/search.php?";
   let add_url = "";
   
@@ -30,8 +29,6 @@ const searchSong = (data = "") => {
     const title = document.getElementById("search-input").value;
     const sort = document.getElementById("sort").value;
     const filter = document.getElementById("filter").value;
-    const page = document.getElementById("page").value;
-  
     if (title.length > 0) {
       add_url += "judul=" + title;
     }
@@ -53,18 +50,35 @@ const searchSong = (data = "") => {
 
   const xhr = new XMLHttpRequest();
 
+  try{
+    document.getElementById("loading-msg").innerHTML = "Loading..";
+  } catch {
+    // do na na
+  }
+
   if(data != ""){
     final_url = base_url + data;
     add_url = data;
   } else {
     final_url = base_url + add_url;
   }
-  console.log(final_url)
+
+  if(!final_url.includes("page=")){
+    console.log('masuk')
+    final_url += "&page=1";
+    add_url += "&page=1";
+  }
 
   xhr.open("GET", final_url, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("loading-msg").innerHTML = "";
+      } else{
+        document.getElementById("loading-msg").innerHTML = "Loading..";
+      }
+  }
   xhr.onload = function () {
     if (this.status == 200) {
-      console.log(this.responseText);
       let response = JSON.parse(this.responseText);
       let songList = document.getElementById("song-list");
       songList.innerHTML = "";

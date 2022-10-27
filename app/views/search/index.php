@@ -50,9 +50,10 @@
 
                     <div class="song-container">
                         <h1> Good Afternoon </h1>
+                        <p id="loading-msg"> Loading.. </p>
 
                         <div class="select">
-                            <select name="filter" id="filter">
+                            <select name="filter" id="filter" onchange=searchSong()>
                                 <option value="Pop">Pop</option>
                                 <option value="Jazz">Jazz</option>
                                 <option value="R&B">R&B</option>
@@ -68,7 +69,7 @@
                         </div>
 
                         <div class="select">
-                        <select name="sort" id="sort">
+                        <select name="sort" id="sort" onchange=searchSong()>
                           <option value="">none</option>
                           <option value="_judul">judul asc</option>
                           <option value="-judul">judul desc</option>
@@ -77,10 +78,10 @@
                         </select>
                         </div>
                 
+                        <!-- KODE AJAIB -->
+                        <!-- <input type="text" id="page"></input> -->
+                        <!-- END OF KODE AJAIB -->
 
-                        <input type="text" id="page"></input>
-
-                        <button type="button" onclick=searchSong()>Search</button>
                         <br>
                         <button class="previous-button" type="button" onclick=prevPage()><i class="fa fa-angle-left"></i></button>
                         <button type="button" class="next-button" onclick=nextPage()><i class="fa fa-angle-right"></i></button>
