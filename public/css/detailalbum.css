@@ -74,20 +74,6 @@ hr.rounded {
   cursor: pointer;
 }
 
-.profile-navbar {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 20px;
-}
-
-.profile-navbar a.user {
-  font-size: 20px;
-  color: white;
-  float: right;
-}
-
 /* SONG LIST */
 .detailalbum-container {
   padding: 20px;
@@ -160,7 +146,6 @@ hr.rounded {
 
 .album-settings {
   align-items: flex-start;
-  justify-content: ;
   display: flex;
 }
 
