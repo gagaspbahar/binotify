@@ -30,7 +30,7 @@
 
                 <div class="homepage-container">
                     <nav class="profile-navbar">
-                        <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
+                        <a href="album.html" class="user"> Hello, <?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </a>
                     </nav>
 
                     <div class="song-container">

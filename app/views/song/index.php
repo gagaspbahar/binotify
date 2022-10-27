@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../../public/css/songdetail.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript">
-        var isGuest = '<?php echo $session_value; ?>';
+        var isGuest = '<?php echo $isGuest; ?>';
     </script>
     <script src="../../../public/js/utility.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,7 +32,7 @@
 
             <div class="homepage-container">
                 <nav class="profile-navbar">
-                    <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
+                    <a href="album.html" class="user"> Hello, <?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </a>
                 </nav>
 
                 <div class="song-container">
