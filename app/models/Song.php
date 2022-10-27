@@ -129,4 +129,12 @@ class SongModel
 
     return $this->db->resultSet();
   }
+
+  public function deleteSongFromAlbum($id) {
+    $this->db->query('UPDATE ' . $this->table . ' SET album_id = NULL WHERE song_id = :id');
+    $this->db->bind('id', $id);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }
+

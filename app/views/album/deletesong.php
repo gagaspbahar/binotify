@@ -17,6 +17,8 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        
+        <script src="../../../public/js/removesong.js"></script>
         <script src="../../../public/js/navbar.js"></script>
     </head>
 
@@ -66,9 +68,9 @@
                                     $song_id = $song['song_id'];
                                     $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                     echo "
-                                    <li class='songlist-row'>
+                                    <li class='songlist-row' id='songlist-row-$song_id'>
                                         <div class='song-count'>
-                                            <img class='play' src='../../../public/img/trash.svg'>
+                                            <img class='play' src='../../../public/img/trash.svg' onclick=removeSong($song_id) >
                                         </div>
                                         <div class='song-info'>
                                             <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
