@@ -32,16 +32,16 @@
                     </nav>
                 </div>
 
-                <div class="detailalbum-container">
+                <div class="detail-album-container">
                     <nav class="profile-navbar">
                          <a href="album.html" class="user"> Hello, <?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </a>
                     </nav>
-                    <div class="albuminfo-container">
+                    <div class="album-info-container">
                         <div class="album-photo">
-                            <img class="album-img" src="../../../public/img/binomify-logo.png">
+                            <img class="album-img" src="../../../public/img/binotify-mascot.svg">
                         </div>
                         <div class="album-info">
-                            <form action="javascript:;" onsubmit="return submitForm()">
+                            <form>
                                 <div class="song-details">
                                     <div class="input-box">
                                         <span class="details">New Title</span>
@@ -52,8 +52,13 @@
                                         <input id="input-file" type="file" placeholder="Enter song cover" required>
                                     </div>
                                 </div>
-                                <div class="button">
-                                    <input type="submit" value="Add">
+                                <div class="button-select">
+                                    <div class="button save">
+                                        <input type="submit" value="Save changes">
+                                    </div>
+                                    <div class="button cancel">
+                                        <input type="submit" value="cancel">
+                                    </div>
                                 </div>
                             </form>
                         </div>

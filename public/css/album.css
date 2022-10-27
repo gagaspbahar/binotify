@@ -9,6 +9,10 @@
   text-transform: capitalize;
 }
 
+a.detail {
+  color: #fff;
+}
+
 .homepage {
   background-color: #212121;
   /* height: 100vh; */
