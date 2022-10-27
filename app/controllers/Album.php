@@ -20,4 +20,8 @@ class Album extends Controller {
   public function detail($id) {
     $this->view('album/detail', array('id' => $id));
   }
+
+  public function edit($id) {
+    $this->view('album/edit', array('id' => $id));
+  }
 }
