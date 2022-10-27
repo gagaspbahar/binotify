@@ -86,7 +86,7 @@
                                                     <a href='/?detailalbum'>
                                                         <img class='play' src='../../../public/img/play-white.png'>
                                                     </a>
-                                                    <span class='song-number'> $count.</span>
+                                                    <span class='song-number'> $count</span>
                                                 </div>
                 
                                                 <div class='song-image'>
