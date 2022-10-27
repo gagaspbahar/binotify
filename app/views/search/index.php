@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="../../../public/js/utility.js"></script>
         <script src="../../../public/js/search.js"></script>
+        <script src="../../../public/js/navbar.js"></script>
     </head>
 
     <body>
@@ -25,15 +26,10 @@
             <div class="homepage">
                 <div class="side-navbar-container">
                     <img src="../../../public/img/logo.png" alt="" class="logo">
-                    <nav class="navbar">
-                        <ul>
-                            <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
-                            <li><i class="fas fa-search"></i><a href="/?search"> Search </a></li>
-                            <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
-                            <hr class="rounded">
-                            <li><a href="/?login"> Login </a></li>
-                            <li><a href="/?register"> Sign Up </a></li>
-                        </ul>
+                    <nav class="navbar" id="navbar">
+                        <script>
+                            addnavbar(<?php echo (isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : -1);?>)
+                        </script>
                     </nav>
                 </div>
 
@@ -43,7 +39,7 @@
                         <input type="text" class="searchTerm "id="search-input" placeholder="What do you want to listen to?"> </input>
                         <button type="submit" class="search-button" onclick=searchSong()><i class="fa fa-search"></i></button>
                     </div>
-                    <a href="album.html" class="user"> Hello, User </a>
+                    <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
                   </nav>
 
                     <div class="song-container">

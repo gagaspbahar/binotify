@@ -17,6 +17,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="../../../public/js/navbar.js"></script>
     </head>
 
     <body>
@@ -24,21 +25,16 @@
             <div class="homepage">
                 <div class="side-navbar-container">
                    <img src="../../../public/img/logo.png" alt="" class="logo">
-                   <nav class="navbar">
-                        <ul>
-                            <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
-                            <li><i class="fas fa-search"></i><a href="search.html"> Search </a></li>
-                            <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
-                            <hr class="rounded">
-                            <li><a href="/?login"> Login </a></li>
-                            <li><a href="/?register"> Sign Up </a></li>
-                        </ul>
+                   <nav class="navbar" id="navbar">
+                        <script>
+                            addnavbar(<?php echo (isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : -1);?>)
+                        </script>
                     </nav>
                 </div>
 
                 <div class="detailalbum-container">
                     <nav class="profile-navbar">
-                         <a href="album.html" class="user"> Hello, User </a>
+                         <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
                     </nav>
                     <a href="/?album" class="previous-button">&#8249;</a>
                     <div class="albuminfo-container">
@@ -75,7 +71,7 @@
                                             <span class='song-number'> 1.</span>
                                         </div>
                                         <div class='song-info'>
-                                            <span class='song-title'>$song[judul]</span>
+                                            <a href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
                                             <span class='singer'>$song[penyanyi]</span>
                                         </div>
 

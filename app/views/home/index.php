@@ -17,19 +17,11 @@
     </head>
 
     <body>
-        <!-- ini buat test logout dan cookie -->
-        <?php 
-        if (isset($_SESSION['username'])) {
-            echo "Hello, " . $_SESSION['username'];
-        }
-        ?>
-        <a href="/api/auth/logout.php" > Logout </a>
         <div class="main-contaner">
             <div class="homepage">
                 <div class="side-navbar-container">
                     <img src="../../../public/img/logo.png" alt="" class="logo">
                     <nav id="navbar" class="navbar">
-                        <ul>
                             <!--
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
                             <li><i class="fas fa-search"></i><a href="/?search"> Search </a></li>
@@ -41,14 +33,12 @@
                             <script>
                                 addnavbar(<?php echo (isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : -1);?>)
                             </script>
-                            
-                        </ul>
                     </nav>
                 </div>
 
                 <div class="homepage-container">
                     <nav class="profile-navbar">
-                        <a href="album.html" class="user"> Hello, User </a>
+                        <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
                     </nav>
 
                     <div class="song-container">
@@ -89,6 +79,7 @@
                                     $count = 1;
                                     foreach ($songs as $song) {
                                         $song_id = $song['song_id'];
+                                        $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                         echo "  
                                             <li class='songlist-row'>
                                                 <div class='song-count'>
@@ -110,7 +101,7 @@
                                                 </div>
                 
                                                 <div class='song-releasedate'>
-                                                    <span class='release-date'>$song[tanggal_terbit]</span>
+                                                    <span class='release-date'>$date</span>
                                                 </div>
                 
                                                 <div class='song-genre'>

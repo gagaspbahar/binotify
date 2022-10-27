@@ -17,35 +17,24 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="../../../public/js/navbar.js"></script>
     </head>
 
     <body>
-        <!-- ini buat test logout dan cookie -->
-        <?php 
-        if (isset($_SESSION['username'])) {
-            echo "Hello, " . $_SESSION['username'];
-        }
-        ?>
-        <a href="/api/auth/logout.php" > Logout </a>
         <div class="main-container">
             <div class="homepage">
                 <div class="side-navbar-container">
                    <img src="../../../public/img/logo.png" alt="" class="logo">
-                   <nav class="navbar">
-                        <ul>
-                            <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
-                            <li><i class="fas fa-search"></i><a href="/?search"> Search </a></li>
-                            <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
-                            <hr class="rounded">
-                            <li><a href="/?login"> Login </a></li>
-                            <li><a href="/?register"> Sign Up </a></li>
-                        </ul>
+                   <nav class="navbar" id="navbar">
+                        <script>
+                            addnavbar(<?php echo (isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : -1);?>)
+                        </script>
                     </nav>
                 </div>
 
                 <div class="albumpage-container">
                     <nav class="profile-navbar">
-                         <a href="album.html" class="user"> Hello, User </a>
+                         <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
                     </nav>
 
                     <div class="album-container">
