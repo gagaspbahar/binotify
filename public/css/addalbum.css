@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .homepage {
@@ -274,8 +274,10 @@ form .input-box span.details {
 }
 
 form .button {
+  width: 25%;
   height: 45px;
   margin: 35px 0;
+  float: right;
 }
 
 form .button input {
@@ -295,6 +297,7 @@ form .button input {
 
 form .button input:hover {
   background: #1db954;
+  transform: scale(1.02);
 }
 
 @media (max-width: 584px) {
@@ -315,11 +318,18 @@ form .button input:hover {
   .song-details::-webkit-scrollbar {
     width: 5px;
   }
+
+  form .button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 459px) {
   .container .content .category {
     flex-direction: column;
+  }
+  form .button {
+    width: 100%;
   }
 }
 

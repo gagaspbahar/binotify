@@ -56,8 +56,8 @@
                                     <span class='song-artist'>Loading artist..</span>
                                     <span class='release-date' id='song-release-date'>Loading..</span>
 
-                                    <span class='duration'><i class="fa fa-clock-o" id='song-duration'></i> Loading..</span>
-                                    <span class='genre' id='song-genre'>R&B</span>
+                                    <span class='duration'><i class="fa fa-clock" id='song-duration'></i> Loading..</span>
+                                    <span class='genre' id='song-genre'>Loading genre...</span>
 
                                 </div>
 

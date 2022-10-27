@@ -67,10 +67,12 @@
                                             <input id="input-file-2" name="file[]" type="file" placeholder="Enter song" required>
                                         </div>
                                     </div>
-                                    <button class="button">
-                                        
+                                    <div class="button">
                                         <input type="submit" value="Add">
-                                    </button>
+                                    </div>
+                                    <!-- <button class="button">
+                                        <input type="submit" value="Add">
+                                    </button> -->
                                 
                                 </form>
                             </div>

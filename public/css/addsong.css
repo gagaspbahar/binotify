@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 .homepage{
@@ -276,30 +276,32 @@ form .input-box span.details{
     border-color: #1db954;
 }
 
-
-form .button{
-     height: 45px;
-     margin: 35px 0
+form .button {
+    width: 25%;
+    height: 45px;
+    margin: 35px 0;
+    float: right;
 }
-
-form .button input{
-     height: 100%;
-     width: 100%;
-     margin: auto;
-     border-radius: 5px;
-     border: none;
-     color: #fff;
-     font-size: 18px;
-     font-weight: 500;
-     letter-spacing: 1px;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     background: #1db954;
-}
-
-form .button input:hover{
+  
+form .button input {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     background: #1db954;
 }
+  
+form .button input:hover {
+    transform: scale(1.02);
+}
+  
 
 @media(max-width: 584px){
     .container{
@@ -319,11 +321,19 @@ form .button input:hover{
     .song-details::-webkit-scrollbar{
         width: 5px;
     }
+
+    form .button {
+        width: 100%;
+    }
 }
 
 @media(max-width: 459px){
     .container .content .category{
         flex-direction: column;
   }
+
+    form .button {
+        width: 100%;
+    }
 }
 

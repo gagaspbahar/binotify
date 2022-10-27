@@ -32,9 +32,60 @@
   color: white;
 }
 
+.navbar ul li a.logout{
+  font-size: 15px;
+  margin-left: 2px;
+  color: white;
+  background-color:#535353;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.navbar ul li a.logout:hover{
+  background-color: #1db954;
+}
+
+hr.rounded {
+  border-top: 1px solid #b3b3b3;
+  margin-bottom: 10px;
+  background: #b3b3b3 ;
+  width: 90%;
+  border-radius: 5px;
+}
+
 .fas {
   color: #b3b3b3;
   height: 20px;
   padding-right: 10px;
   cursor: pointer;
+}
+
+.profile-navbar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.profile-navbar h1.user {
+  margin-top: 12px;
+  font-size: 25px;
+  color: white;
+  float: right;
+}
+
+.profile-navbar h2.username {
+  margin-top: 10px;
+  margin-left: 3px;
+  color: white;
+  text-decoration: underline solid #1DB954 3px;
+}
+
+.profile-navbar .fa{
+  color: white;
+  height: 10px;
+  font-size: 25px;
+  padding-right: 10px;
+  margin-left: 8px;
 }
