@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .homepage {
@@ -203,4 +203,47 @@ a.detail:hover {
 
 .songlist-row:hover .trackOptions img {
   visibility: visible;
+}
+.songlist-header {
+  height: 40px;
+  padding: 15px 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.8px solid #939393;
+}
+
+.songlist-header span {
+  color: #939393;
+  font-weight: 200;
+}
+
+.songlist-header .song-count {
+  width: 5%;
+  align-self: center;
+  float: left;
+}
+
+.songlist-header .song-count img {
+  width: 20px;
+  visibility: hidden;
+  position: absolute;
+  cursor: pointer;
+}
+
+.songlist-header .song-info {
+  width: 75%;
+  float: left;
+}
+
+.songlist-header .song-releasedate {
+  width: 15%;
+  float: center;
+  text-align: center;
+}
+
+.songlist-header .song-genre {
+  width: 12%;
+  float: center;
+  text-align: center;
 }
