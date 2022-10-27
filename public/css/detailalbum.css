@@ -277,12 +277,17 @@ hr.rounded {
 }
 
 .delete-button {
-  background: red;
+  background: rgb(186, 4, 4);
 }
 .edit-button,
 .manage-button {
-  background: #1ed760;
+  background: #059437;
 }
+
+a.detail {
+  color: #fff;
+}
+
 .button:hover {
   color: black;
   background: #1db954;
@@ -291,5 +296,13 @@ hr.rounded {
   font-size: 13px;
   border-radius: 15px;
   border-style: none;
-  background: white;
+  background: rgb(172, 159, 159);
+}
+
+a.detail {
+  color: #fff;
+}
+
+a.detail:hover {
+  text-decoration: underline;
 }

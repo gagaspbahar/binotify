@@ -44,7 +44,7 @@
                                     $album_id = $data['id'];
                                     echo "
                                     <button class='delete-button button' type='button'>Delete Album</a></button>
-                                    <button class='edit-button button' type='button'><a href='/?album/edit/$album_id'>Edit Info</a></button>
+                                    <button class='edit-button button' type='button'><a class='detail' href='/?album/edit/$album_id'>Edit Info</a></button>
                                     <button class='manage-button button' type='button'>Manage Songs</button>
                                     ";
                                 } else {
@@ -87,6 +87,7 @@
                                 $songs = $db->resultSet();
                                 foreach ($songs as $song) {
                                     $song_id = $song['song_id'];
+                                    $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                 echo "
                                     <li class='songlist-row'>
                                         <div class='song-count'>
@@ -94,12 +95,12 @@
                                             <span class='song-number'> 1.</span>
                                         </div>
                                         <div class='song-info'>
-                                            <a href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
+                                            <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
                                             <span class='singer'>$song[penyanyi]</span>
                                         </div>
 
                                         <div class='song-releasedate'>
-                                            <span class='release-date'>$song[tanggal_terbit]</span>
+                                            <span class='release-date'>$date</span>
                                         </div>
 
                                         <div class='song-genre'>
