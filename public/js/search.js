@@ -67,15 +67,39 @@ const searchSong = (data = "") => {
       let songList = document.getElementById("song-list");
       songList.innerHTML = "";
       window.history.pushState("","","/?search/" + add_url);
+      let count = 1;
       response.forEach((song) => {
         songList.innerHTML += `
-            <div class="song-item">
-              <div class="song-item__title">
-                <p>${song.judul}</p>
+            <div class='songlist-row'>
+              <div class='song-count'>
+                  <a href='/?detailalbum'>
+                      <img class='play' src='../../../public/img/play-white.png'>
+                  </a>
+                  <span class='song-number'> ${count}.</span>
+              </div>
+              <div class='song-image'>
+                <img class='songimage' src='../../../${song.image_path}'>
+              </div>
+
+              <div class='song-info'>
+                <span class='song-title'><a class='detail' href='/?song/${song.song_id}'>${song.judul}</a></span>
+                <span class='singer'>${song.penyanyi}</span>
+              </div>
+
+              <div class='song-releasedate'>
+                  <span class='release-date'>${song.tanggal_terbit}</span>
+              </div>
+
+              <div class='song-genre'>
+                  <span class='genre'>${song.genre}</span>
+              </div>
+
+              <div class='trackOptions'>
+                  <img class='optionButton' src='../../../public/img/more.png'>
               </div>
             </div>
           `;
-        
+        count++; 
       });
     }
   };
@@ -95,8 +119,6 @@ const prevPage = () => {
 
 const nextPage = () => {
   let newPage = parseInt(getQueryVariable("page")) + 1
-
   const link = updateQueryStringParameter(window.location.href, "page", newPage);
-  
   searchSong((link.split("?")[1]).split("/")[1]);
 }
