@@ -95,7 +95,7 @@
                         </ul>
                     </div>
                     <div class="button-container">
-                        <button class="done-button" type="button">Done</button>
+                        <button class="done-button" type="button" onclick=done(<?php echo $data['id'] ?>) ">Done</button>
                     </div>
                 </div>
             </div>

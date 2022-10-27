@@ -15,3 +15,7 @@ const removeSong = (songId) => {
 
   xhr.send(data);
 }
+
+const done = (album_id) => {
+  window.location.href = "/?album/detail/" + album_id;
+}
