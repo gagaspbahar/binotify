@@ -81,13 +81,13 @@ if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi'])
     
         if ($rows && $uploadOk == 1) {
             http_response_code(200);
-            echo "Song uploaded successfully";
+            echo json_encode(array("message" => "Song uploaded successfully"));
         } else {
             http_response_code(500);
-            echo "Song upload failed";
+            echo json_encode(array("message" => "Song upload failed"));
         }
     }  
 } else {
     http_response_code(400);
-    echo "Bad request";
+    echo json_encode(array("message" => "Bad request"));
 }

@@ -43,6 +43,8 @@ const searchSong = (data = "") => {
     }
     if (page.length > 0) {
       add_url += "&page=" + page;
+    } else {
+      add_url += "&page=1";
     }
   } catch (e) {
     console.log(e);

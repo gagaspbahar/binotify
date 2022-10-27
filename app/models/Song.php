@@ -45,6 +45,14 @@ class SongModel
     $this->db->bind('tanggal_terbit', $data['tanggal_terbit']);
     $this->db->bind('genre', $data['genre']);
     $this->db->bind('image_path', $data['image_path']);
+    $this->db->bind('id', $data['song_id']);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
+  public function deleteSong($id) {
+    $this->db->query('DELETE FROM ' . $this->table . ' WHERE song_id = :id');
+    $this->db->bind('id', $id);
     $this->db->execute();
     return $this->db->rowCount();
   }

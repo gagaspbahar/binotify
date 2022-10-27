@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="../../../public/css/songdetail.css" />
         <!-- <link rel="stylesheet" href="../../../public/css/addsong.css" /> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript">
+            var song_id = '<?php echo $data['id']; ?>';
+        </script>
         <script src="../../../public/js/utility.js"></script>
         <link
             rel="stylesheet"
@@ -48,27 +51,20 @@
                         <h1> Edit Song Details </h1>
 
                         <div class="songlist-container">
-                            <?php 
-                                // $song_id = $data['id'];
-                                // $db = new Database;
-                                // $query = "SELECT * FROM songs WHERE song_id = '$song_id'";
-                                // $db->query($query);
-                                // $song = $db->resultSet();
-                            ?>
+
                             <div class='songlist-row'>
                                 <!-- edit detail -->
-                                <form action="/api/music/edit.php" method="POST" class="edit-form">
+                                
                                 <div class="column left">
                                     <div class="song-image-detail">
-                                    <input type="file" id="song-image" class="song-image" placeholder="Upload song image">
-                                        <img class='song-image' src='../../../public/img/binomify-logo.png'>
+                                    <img class='song-image' id='input-image' src='../../../public/img/binomify-logo.png'>
                                     </div>
                                 </div>
 
                                 <div class="column right">
                                     
                                     <div class='song-info'>
-                                        <form action="/api/music/edit.php" method="POST" class="edit-form">
+                                        <form action="javascript:;" submit="return saveChanges()" class="edit-form">
                                         <div class="song-details">
                                             <div class="input-box">
                                                 <span class="details">Title</span>
@@ -117,7 +113,7 @@
                                     </div>
 
                                     <div class="delete">
-                                        <button class="delete-song"> Delete </button>
+                                        <button onclick=deleteSong() class="delete-song"> Delete </button>
                                     </div>
                                 </div>
                             </div>        
@@ -203,7 +199,7 @@
                 </div>
             </div>
         </div> -->
-        <script src="../../../public/js/songdetail.js"></script>
+        <script src="../../../public/js/songedit.js"></script>
         <script>
             getSongDetail(<?php echo $data['id'] ?>);
         </script>
