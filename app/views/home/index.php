@@ -72,7 +72,7 @@
                                 </li>
                                 <?php 
                                     $db = new Database;
-                                    $query = "SELECT * FROM songs ORDER BY song_id DESC LIMIT 10";
+                                    $query = "SELECT * FROM (SELECT * FROM songs ORDER BY song_id DESC LIMIT 10)top ORDER BY LOWER(judul) ASC";
                                     $db->query($query);
                                     $songs = $db->resultSet();
 
