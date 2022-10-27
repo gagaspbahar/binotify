@@ -51,7 +51,7 @@
 
                         <div class="songlist-container">
                             <div class="content">
-                                <form action="/api/music/upload.php" method="post" enctype="multipart/form-data">
+                                <form action="javascript:;" onsubmit="return submitForm()">
                                     <div class="song-details">
                                         <div class="input-box">
                                             <span class="details">Title</span>
@@ -79,12 +79,12 @@
                                             <input id="input-file-2" name="file[]" type="file" placeholder="Enter song" required>
                                         </div>
                                     </div>
+                                    <button class="button">
+                                        
+                                        <input type="submit" value="Add">
+                                    </button>
                                 
                                 </form>
-                                <button class="button" onclick=submitForm()>
-                                    Add
-                                    <!-- <input type="submit" value="Add"> -->
-                                </button>
                             </div>
 
                         </div>

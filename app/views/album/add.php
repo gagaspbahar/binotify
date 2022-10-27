@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Binotify </title>
         <link rel="stylesheet" href="../../../public/css/addsong.css" />
+        <script src="../../../public/js/albumupload.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -50,11 +51,11 @@
 
                         <div class="songlist-container">
                             <div class="content">
-                                <form action="#">
+                                <form action="javascript:;" onsubmit="return submitForm()">
                                     <div class="song-details">
                                         <div class="input-box">
                                             <span class="details">Title</span>
-                                            <input id="input-title" type="text" placeholder="Enter song title" required>
+                                            <input id="input-title" type="text" placeholder="Enter album title" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Artist</span>
@@ -62,26 +63,18 @@
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Release Date</span>
-                                            <input id="input-date" type="date" placeholder="Enter song release date" required>
+                                            <input id="input-date" type="date" placeholder="Enter album release date" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Genre</span>
-                                            <input id="input-genre" type="text" placeholder="Enter song genre" required>
+                                            <input id="input-genre" type="text" placeholder="Enter album genre" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Image</span>
                                             <input id="input-file" type="file" placeholder="Enter song cover" required>
                                         </div>
                                     </div>
-                                    <div class="song-selection">
-                                        Select Song </br>
-                                    <input type="checkbox" id="song1" name="song1" value="Bike">
-                                    <label for="vehicle1"> I have a bike</label><br>
-                                    <input type="checkbox" id="song2" name="song2" value="Car">
-                                    <label for="vehicle2"> I have a car</label><br>
-                                    <input type="checkbox" id="song3" name="song3" value="Boat">
-                                    <label for="vehicle3"> I have a boat</label><br><br>
-                                    </div>
+                                    
                                     <div class="button">
                                         <input type="submit" value="Add">
                                     </div>

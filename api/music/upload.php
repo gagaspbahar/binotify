@@ -17,8 +17,6 @@ $song_dir = "../../public/song/";
 $target_song_file = $song_dir . basename($_FILES["file2"]["name"]);
 $saved_song_dir = "public/song/" . basename($_FILES["file2"]["name"]);
 
-error_log(print_r($_FILES, TRUE));
-
 if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi']) && isset($_POST['tanggal_terbit']) && isset($_FILES['file']) && isset($_FILES['file2'])) {
     $uploadOk = 1;
     $songFileType = strtolower(pathinfo($target_song_file,PATHINFO_EXTENSION));
@@ -58,6 +56,7 @@ if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi'])
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
+        http_response_code(500);
         echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
     } else {
