@@ -165,6 +165,20 @@ hr.rounded {
     padding-bottom: 50px;
 }
 
+.songlist-row .song-info .song-album{
+    padding-bottom: 40px;
+}
+
+.songlist-row .song-info .song-album a{
+    color: white;
+    padding-bottom: 50px;
+}
+
+.songlist-row .song-info .song-album a:hover{
+    text-decoration: underline;
+}
+
+
 .songlist-row .song-info .release-date {
     padding-bottom: 5px;
 }

@@ -53,8 +53,8 @@
 
                                 <div class='song-info'>
                                     <span class='song-title' id='song-title'>Loading title..</span>
+                                    <span class='song-album'><a href="/?album/detail/"></a></span>
                                     <span class='song-artist'>Loading artist..</span>
-                                    <span class='song-album'>Loading album..</span>
                                     <span class='release-date' id='song-release-date'>Loading..</span>
 
                                     <span class='duration'><i class="fa fa-clock" id='song-duration'></i> Loading..</span>
