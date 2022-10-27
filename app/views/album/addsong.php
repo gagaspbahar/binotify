@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Binotify </title>
-        <link rel="stylesheet" href="../../../public/css/detailalbum.css" />
+        <link rel="stylesheet" href="../../../public/css/deletesongalbum.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link
             rel="stylesheet"
@@ -17,6 +17,8 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        
+        <script src="../../../public/js/removesong.js"></script>
         <script src="../../../public/js/navbar.js"></script>
     </head>
 
@@ -55,15 +57,45 @@
                         </div>
                     </div>
                     <div class="song-container">
-                        <form action="/action_page.php">
-                            <input type="checkbox" id="song1" name="song1" value="Bike">
-                            <label for="vehicle1"> Judul 1</label><br>
-                            <input type="checkbox" id="song2" name="song2" value="Bike">
-                            <label for="vehicle1"> Judul 2</label><br>
-                            <input type="checkbox" id="song3" name="song3" value="Bike">
-                            <label for="vehicle1"> Judul 3</label><br>
-                            <input type="submit" value="Submit">
-                        </form>
+                        <ul class="songlist">
+                            <?php 
+                                $album_id = $data['id'];
+                                $db = new Database;
+                                $query = "SELECT * FROM songs WHERE album_id = '$album_id'";
+                                $db->query($query);
+                                $songs = $db->resultSet();
+                                foreach ($songs as $song) {
+                                    $song_id = $song['song_id'];
+                                    $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
+                                    echo "
+                                    <li class='songlist-row' id='songlist-row-$song_id'>
+                                        <div class='song-count'>
+                                            <img class='play' src='../../../public/img/plus.svg' onclick=removeSong($song_id) >
+                                        </div>
+                                        <div class='song-info'>
+                                            <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
+                                            <span class='singer'>$song[penyanyi]</span>
+                                        </div>
+
+                                        <div class='song-releasedate'>
+                                            <span class='release-date'>$date</span>
+                                        </div>
+
+                                        <div class='song-genre'>
+                                            <span class='genre'>$song[genre]</span>
+                                        </div>
+
+                                        <div class='trackOptions'>
+                                            <img class='optionButton' src='../../../public/img/more.png'>
+                                        </div>
+                                    </li>
+                                    ";
+                                }
+                                ?>     
+                        </ul>
+                    </div>
+                    <div class="button-container">
+                        <button class="done-button" type="button" onclick=done(<?php echo $data['id'] ?>) ">Done</button>
                     </div>
                 </div>
             </div>
