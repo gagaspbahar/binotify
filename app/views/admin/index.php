@@ -43,86 +43,39 @@
                     </nav>
 
                     <div class="song-container">
-                        <!-- <h1> Good Afternoon </h1> -->
 
-                        <h2 class="top-10-newest">Binotify Users</h2>
-
-                        <div class="songlist-container">
-                            <ul class="songlist">
-
-                                <li class='table-title data-title'>
-                                    <div class='song-count'>
-                                        <span class='no-title'> No </span>
-                                    </div>
-
-                                    <div class='data'>
-                                        <span class='user-title'>Username</span>
-                                    </div>
-
-                                    <!-- <div class='data-type'>
-                                        <span class='type-title'>Type</span>
-                                    </div> -->
-
-                                    <div class='data'>
-                                        <span class='email-title'>Email</span>
-                                    </div>
-                                </li>
-
-                                <?php 
-                                    $db = new Database;
-                                    $query = "SELECT * FROM users";
-                                    $db->query($query);
-                                    $users = $db->resultSet();
-
-                                    $count = 1;
-                                    foreach ($users as $user) {
-                                        echo "  <li class='table-title data-value'>
-                                                    <div class='song-count'>
-                                                        <span class='no-data'> $count.</span>
-                                                    </div>
-    
-                                                    <div class='data username'>
-                                                        <span class='user-data'> $user[username] </span>
-                                                    </div>
-
-                                                    <div class='data email'>
-                                                        <span class='email-data'>$user[email]</span>
-                                                    </div>
-                                                </li>
-                                            ";
-                                        $count++;
-                                    }
-                                ?>
-                                        <!-- // echo "  <li class='table-title data-value'>
-                                        //             <div class='song-count'>
-                                        //                 <span class='no-data'> $count.</span>
-                                        //             </div>
-                
-                                        //             <div class='data username'>
-                                        //                 <span class='user-data'> $user[username] </span>
-                                        //             </div>
-                                             
-                                        //              ";
-
-                                        //     if ($user['is_admin'] == true) {
-                                        //         echo "  <div class='data-type'>  
-                                        //                     <span class='type-data'> Admin </span> 
-                                        //                 </div>";
-                                        //     } else {
-                                        //         echo "  <div class='data-type'>
-                                        //                     <span class='type-data'> 
-                                        //                         User 
-                                        //                     </span> 
-                                        //                 </div>";
-                                        
-                                        // echo "<div class='data email'>
-                                        //         <span class='email-data'>$user[email]</span>
-                                        //         </div>
-                                        //     </li>";}
-                                        // $count++;
-                                //     }
-                                // ?> -->
-                            </ul>
+                        <h2 class="users-table">Binotify Users</h2>
+                        <div class="table-container">
+                            <div class="user-list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <?php 
+                                        $db = new Database;
+                                        $query = "SELECT * FROM users";
+                                        $db->query($query);
+                                        $users = $db->resultSet();
+                                        $count = 1;
+                                        foreach ($users as $user) {
+                                            echo "  <tbody>
+                                                        <tr>
+                                                            <td> $count. </td>
+                                                            <td> $user[username] </td>
+                                                            <td>$user[email] </td>
+                                                        </tr>
+                                                    </tbody>
+                                                ";
+                                            $count++;
+                                        }
+                                    ?>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -52,6 +52,27 @@
                         <div class="songlist-container">
 
                             <ul class="songlist">
+                                <li class='songlist-header'>
+                                    <div class='song-count'>
+                                        <span class='song-number'> # </span>
+                                    </div>
+
+                                    <div class='song-info'>
+                                        <span class='song-title'> Title </span>
+                                    </div>
+
+                                    <div class='song-releasedate'>
+                                        <span class='release-date'>Date</span>
+                                    </div>
+
+                                    <div class='song-genre'>
+                                        <span class='genre'>Genre</span>
+                                    </div>
+
+                                    <div class='trackOptions'>
+                                        <!-- <img class='optionButton' src='../../../public/img/more.png'> -->
+                                    </div>
+                                </li>
                                 <?php 
                                     $db = new Database;
                                     $query = "SELECT * FROM songs ORDER BY song_id DESC LIMIT 10";
