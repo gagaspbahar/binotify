@@ -22,7 +22,7 @@ const submitForm = () => {
   xhr.open("POST", "../../api/album/upload.php", true);
   xhr.onload = function () {
     if (this.status === 200) {
-      alert("Add album success :D");
+      alert("Add album success :D. Add the songs via the album page.");
     } else {
       alert("Add album failed :(");
     }

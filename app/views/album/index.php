@@ -61,7 +61,7 @@
                                     $album_id = $album['album_id'];
                                 echo "
                                     <div class='grid-item'>
-                                        <a class='detail' href='/?detailalbum/$album[album_id]'>
+                                        <a class='detail' href='/?album/detail/$album[album_id]'>
                                             <div class='album-image'>
                                             <img src='../../../$album[image_path]'>
                                             </div>

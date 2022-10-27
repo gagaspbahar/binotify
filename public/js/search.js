@@ -67,7 +67,7 @@ const searchSong = (data = "") => {
       let songList = document.getElementById("song-list");
       songList.innerHTML = "";
       window.history.pushState("","","/?search/" + add_url);
-      let count = 1;
+      let count = 1 + (parseInt(getQueryVariable("page")) - 1) * 5;
       response.forEach((song) => {
         songList.innerHTML += `
             <div class='songlist-row'>

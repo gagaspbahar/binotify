@@ -9,7 +9,6 @@ $saved_img_dir = "public/img/song-cover/" . basename($_FILES["file"]["name"]);
 
 if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi']) && isset($_POST['tanggal_terbit']) && isset($_FILES['file'])) {
     $uploadOk = 1;
-    $songFileType = strtolower(pathinfo($target_song_file,PATHINFO_EXTENSION));
     $imgFileType = strtolower(pathinfo($target_img_file,PATHINFO_EXTENSION));
 
     // Check if file already exists 
@@ -37,28 +36,24 @@ if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi'])
     } else {
         $st = move_uploaded_file($_FILES["file"]["tmp_name"], $target_img_file);
         
-        $song_model = new SongModel();
-    
-        $cmd = 'mp3info -p "%S" ' . $target_song_file;
-        $duration = intval(exec($cmd));
+        $album_model = new AlbumModel();
     
         $dataparams = array(
             'judul' => $_POST['judul'],
             'penyanyi' => $_POST['penyanyi'],
             'tanggal_terbit' => $_POST['tanggal_terbit'],
             'genre' => $_POST['genre'],
-            'duration' => $duration,
-            'audio_path' => $saved_song_dir,
+            'duration' => 0,
             'image_path' => $saved_img_dir
         );
-        $rows = $song_model->insertSong($dataparams);
+        $rows = $album_model->insertAlbum($dataparams);
     
         if ($rows && $uploadOk == 1) {
             http_response_code(200);
-            echo "Song uploaded successfully";
+            echo "Album added.";
         } else {
             http_response_code(500);
-            echo "Song upload failed";
+            echo "Adding album failed";
         }
     }  
 } else {
