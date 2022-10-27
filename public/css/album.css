@@ -27,6 +27,7 @@ a.detail {
 
 .albumpage-container {
   width: 80%;
+  min-height: 100vh;
 }
 
 /* NAVBAR */
