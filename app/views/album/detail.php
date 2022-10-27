@@ -17,6 +17,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="../../../public/js/albumdetail.js"></script>
         <script src="../../../public/js/navbar.js"></script>
     </head>
 
@@ -43,7 +44,7 @@
                                 if ($_SESSION['is_admin'] == 1) {
                                     $album_id = $data['id'];
                                     echo "
-                                    <button class='delete-button button' type='button'>Delete Album</a></button>
+                                    <button class='delete-button button' type='button' onclick=deleteAlbum($album_id)>Delete Album</a></button>
                                     <button class='edit-button button' type='button'><a class='detail' href='/?album/edit/$album_id'>Edit Info</a></button>
                                     <button class='add-button button' type='button'><a class='detail' href='/?album/addsong/$album_id'>Add Songs</a></button>
                                     <button class='delete-song-button button' type='button'><a class='detail' href='/?album/deletesong/$album_id'>Delete Songs</a></button>
@@ -123,7 +124,6 @@
                 </div>
             </div>
         </div>
-        <script src="../../../public/js/albumdetail.js"></script>
         <script>
             getAlbumDetail(<?php echo $data['id'] ?>);
         </script>

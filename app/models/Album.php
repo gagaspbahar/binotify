@@ -46,4 +46,11 @@ class AlbumModel
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function deleteAlbum($id){
+    $this->db->query('DELETE FROM ' . $this->table . ' WHERE album_id = :id');
+    $this->db->bind('id', $id);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }

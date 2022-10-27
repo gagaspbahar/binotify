@@ -61,32 +61,22 @@
                             <?php 
                                 $album_id = $data['id'];
                                 $db = new Database;
-                                $query = "SELECT * FROM songs WHERE album_id = '$album_id'";
+                                $query = "SELECT penyanyi FROM albums WHERE album_id = $album_id";
                                 $db->query($query);
+                                $penyanyi = $db->single();
+                                $query2 = "select song_id, judul from songs where album_id is null and penyanyi = '" . $penyanyi['penyanyi'] . "'";
+                                $db->query($query2);
                                 $songs = $db->resultSet();
                                 foreach ($songs as $song) {
                                     $song_id = $song['song_id'];
-                                    $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                     echo "
                                     <li class='songlist-row' id='songlist-row-$song_id'>
                                         <div class='song-count'>
-                                            <img class='play' src='../../../public/img/plus.svg' onclick=removeSong($song_id) >
+                                            <img class='play' src='../../../public/img/plus.svg' onclick='addSong($song_id, $album_id)' >
                                         </div>
                                         <div class='song-info'>
                                             <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
                                             <span class='singer'>$song[penyanyi]</span>
-                                        </div>
-
-                                        <div class='song-releasedate'>
-                                            <span class='release-date'>$date</span>
-                                        </div>
-
-                                        <div class='song-genre'>
-                                            <span class='genre'>$song[genre]</span>
-                                        </div>
-
-                                        <div class='trackOptions'>
-                                            <img class='optionButton' src='../../../public/img/more.png'>
                                         </div>
                                     </li>
                                     ";

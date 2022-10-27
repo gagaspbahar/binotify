@@ -20,3 +20,19 @@ const getAlbumDetail = (id) => {
   };
   xhr.send();
 };
+
+const deleteAlbum = (id) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "../../api/album/delete.php", true);
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      window.location.href = "/?album";
+      alert("Delete album success :D");
+    } else {
+      alert("Delete album failed :(");
+    }
+  }
+  const data = new FormData();
+  data.append("id", id);
+  xhr.send(data);
+}

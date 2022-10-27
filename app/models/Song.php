@@ -136,5 +136,13 @@ class SongModel
     $this->db->execute();
     return $this->db->rowCount();
   }
+
+  public function addSongToAlbum($song_id, $album_id) {
+    $this->db->query('UPDATE ' . $this->table . ' SET album_id = :album_id WHERE song_id = :song_id');
+    $this->db->bind('album_id', $album_id);
+    $this->db->bind('song_id', $song_id);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }
 
