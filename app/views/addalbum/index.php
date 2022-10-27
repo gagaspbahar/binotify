@@ -54,23 +54,23 @@
                                     <div class="song-details">
                                         <div class="input-box">
                                             <span class="details">Title</span>
-                                            <input type="text" placeholder="Enter song title" required>
+                                            <input id="input-title" type="text" placeholder="Enter song title" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Artist</span>
-                                            <input type="text" placeholder="Enter artist name" required>
+                                            <input id="input-artist" type="text" placeholder="Enter artist name" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Release Date</span>
-                                            <input type="text" placeholder="Enter song release date" required>
+                                            <input id="input-date" type="date" placeholder="Enter song release date" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Genre</span>
-                                            <input type="text" placeholder="Enter song genre" required>
+                                            <input id="input-genre" type="text" placeholder="Enter song genre" required>
                                         </div>
                                         <div class="input-box">
                                             <span class="details">Image</span>
-                                            <input type="file" placeholder="Enter song cover" required>
+                                            <input id="input-file" type="file" placeholder="Enter song cover" required>
                                         </div>
                                     </div>
                                     <div class="song-selection">

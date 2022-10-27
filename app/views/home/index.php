@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="../../../public/js/utility.js"></script>
+        <script src="../../../public/js/navbar.js"></script>
     </head>
 
     <body>
@@ -27,7 +28,7 @@
             <div class="homepage">
                 <div class="side-navbar-container">
                     <img src="../../../public/img/logo.png" alt="" class="logo">
-                    <nav class="navbar">
+                    <nav id="navbar" class="navbar">
                         <ul>
                             <!--
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
@@ -37,9 +38,10 @@
                             <li><a href="/?login"> Login </a></li>
                             <li><a href="/?register"> Sign Up </a></li>
                             -->
-                            <?php include 'navbar.php';?>
-                            <?php echo $_SERVER['DOCUMENT_ROOT'];?>
-                            <?php include '../navbar/navbar.php';?>
+                            <script>
+                                addnavbar(<?php echo (isset($_SESSION['is_admin']) ? $_SESSION['is_admin'] : -1);?>)
+                            </script>
+                            
                         </ul>
                     </nav>
                 </div>

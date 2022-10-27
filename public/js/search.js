@@ -87,7 +87,7 @@ const searchSong = (data = "") => {
               </div>
 
               <div class='song-releasedate'>
-                  <span class='release-date'>${song.tanggal_terbit}</span>
+                  <span class='release-date'>${getReleaseDate(song.tanggal_terbit)}</span>
               </div>
 
               <div class='song-genre'>

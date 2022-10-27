@@ -15,17 +15,16 @@ const submitForm = () => {
   data.append("penyanyi", artist);
   data.append("genre", genre);
   data.append("tanggal_terbit", date);
-  data.append("file", document.getElementById("input-file-1").files[0]);
-  data.append("file2", document.getElementById("input-file-2").files[0]);
+  data.append("file", document.getElementById("input-file").files[0]);
 
 
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "../../api/music/upload.php", true);
+  xhr.open("POST", "../../api/album/upload.php", true);
   xhr.onload = function () {
     if (this.status === 200) {
-      alert("Add song success :D");
+      alert("Add album success :D");
     } else {
-      alert("Add song failed :(");
+      alert("Add album failed :(");
     }
   };
   xhr.send(data);

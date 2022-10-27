@@ -8,3 +8,33 @@
   text-decoration: none;
 }
 
+.navbar {
+  margin-left: 25px;
+  color: #b3b3b3;
+}
+
+.navbar ul {
+  list-style-type: none;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  margin-bottom: 15px;
+}
+
+.navbar ul li a {
+  font-size: 15px;
+  margin-left: 2px;
+  color: #b3b3b3;
+}
+
+.navbar a:hover {
+  color: white;
+}
+
+.fas {
+  color: #b3b3b3;
+  height: 20px;
+  padding-right: 10px;
+  cursor: pointer;
+}
