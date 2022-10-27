@@ -24,4 +24,12 @@ class Album extends Controller {
   public function edit($id) {
     $this->view('album/edit', array('id' => $id));
   }
+
+  public function deletesong($id) {
+    $this->view('album/deletesong', array('id' => $id));
+  }
+
+  public function addsong($id) {
+    $this->view('album/addsong', array('id' => $id));
+  }
 }

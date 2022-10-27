@@ -199,13 +199,8 @@ hr.rounded {
 
 .songlist-row .song-count img {
   width: 20px;
-  visibility: hidden;
   position: absolute;
   cursor: pointer;
-}
-
-.songlist-row:hover .song-count img {
-  visibility: visible;
 }
 
 .songlist-row .song-count span {
@@ -259,12 +254,7 @@ hr.rounded {
 
 .songlist-row .trackOptions img {
   width: 15px;
-  visibility: hidden;
   cursor: pointer;
-}
-
-.songlist-row:hover .trackOptions img {
-  visibility: visible;
 }
 
 .button {
@@ -300,5 +290,13 @@ a.detail:hover {
 }
 
 .done-button {
-  margin: auto;
+  background-color: #1ed760;
+  padding: 10px 20px;
+  color: white;
+  margin-left: 400px;
+  border-radius: 30px;
+}
+
+.button-container {
+  justify-content: center;
 }

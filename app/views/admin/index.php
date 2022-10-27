@@ -16,7 +16,6 @@ include_once 'app/core/Database.php';
 </head>
 
 <body>
-    <a href="/api/auth/logout.php"> Logout </a>
     <div class="main-contaner">
         <div class="homepage">
             <div class="side-navbar-container">

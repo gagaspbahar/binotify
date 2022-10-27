@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Binotify </title>
-        <link rel="stylesheet" href="../../../public/css/detailalbum.css" />
+        <link rel="stylesheet" href="../../../public/css/deletesongalbum.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link
             rel="stylesheet"
@@ -37,30 +37,6 @@
                          <a href="album.html" class="user"> Hello, <?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </a>
                     </nav>
                     <a href="/?album" class="previous-button">&#8249;</a>
-                    <div class="album-settings">
-                        <?php
-                            if(isset($_SESSION['is_admin'])){
-                                if ($_SESSION['is_admin'] == 1) {
-                                    $album_id = $data['id'];
-                                    echo "
-                                    <button class='delete-button button' type='button'>Delete Album</a></button>
-                                    <button class='edit-button button' type='button'><a class='detail' href='/?album/edit/$album_id'>Edit Info</a></button>
-                                    <button class='add-button button' type='button'><a class='detail' href='/?album/addsong/$album_id'>Add Songs</a></button>
-                                    <button class='delete-song-button button' type='button'><a class='detail' href='/?album/deletesong/$album_id'>Delete Songs</a></button>
-                                    ";
-                                } else {
-                                    echo "
-
-                                    ";
-                                }
-                            } else {
-                                echo "
-                            
-                                ";
-                            }
-                        ?>
-
-                    </div>
                     <div class="albuminfo-container">
                         <div class="album-photo">
                             <img class="album-img" src="../../../public/img/binomify-logo.png">
@@ -86,16 +62,13 @@
                                 $query = "SELECT * FROM songs WHERE album_id = '$album_id'";
                                 $db->query($query);
                                 $songs = $db->resultSet();
-                                $count = 1;
                                 foreach ($songs as $song) {
-                                    $const++;
                                     $song_id = $song['song_id'];
                                     $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                     echo "
                                     <li class='songlist-row'>
                                         <div class='song-count'>
-                                            <img class='play' src='../../../public/img/play-white.png'>
-                                            <span class='song-number'>$count</span>
+                                            <img class='play' src='../../../public/img/trash.svg'>
                                         </div>
                                         <div class='song-info'>
                                             <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
@@ -115,10 +88,12 @@
                                         </div>
                                     </li>
                                     ";
-                                    $count++;
                                 }
                                 ?>     
                         </ul>
+                    </div>
+                    <div class="button-container">
+                        <button class="done-button" type="button">Done</button>
                     </div>
                 </div>
             </div>
