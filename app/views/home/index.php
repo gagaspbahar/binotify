@@ -29,12 +29,17 @@
                     <img src="../../../public/img/logo.png" alt="" class="logo">
                     <nav class="navbar">
                         <ul>
+                            <!--
                             <li><i class="fas fa-home"></i><a href="/?home"> Home </a></li>
                             <li><i class="fas fa-search"></i><a href="/?search"> Search </a></li>
                             <li><i class="fas fa-list"></i><a href="/?album"> Album </a></li>
                             <hr class="rounded">
                             <li><a href="/?login"> Login </a></li>
                             <li><a href="/?register"> Sign Up </a></li>
+                            -->
+                            <?php include 'navbar.php';?>
+                            <?php echo $_SERVER['DOCUMENT_ROOT'];?>
+                            <?php include '../navbar/navbar.php';?>
                         </ul>
                     </nav>
                 </div>
