@@ -37,6 +37,29 @@
                          <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
                     </nav>
                     <a href="/?album" class="previous-button">&#8249;</a>
+                    <div class="album-settings">
+                        <?php
+                            if(isset($_SESSION['is_admin'])){
+                                if ($_SESSION['is_admin'] == 1) {
+                                    $album_id = $data['id'];
+                                    echo "
+                                    <button class='delete-button button' type='button'>Delete Album</a></button>
+                                    <button class='edit-button button' type='button'><a href='/?album/edit/$album_id'>Edit Info</a></button>
+                                    <button class='manage-button button' type='button'>Manage Songs</button>
+                                    ";
+                                } else {
+                                    echo "
+
+                                    ";
+                                }
+                            } else {
+                                echo "
+                            
+                                ";
+                            }
+                        ?>
+
+                    </div>
                     <div class="albuminfo-container">
                         <div class="album-photo">
                             <img class="album-img" src="../../../public/img/binomify-logo.png">

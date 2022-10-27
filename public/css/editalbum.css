@@ -100,11 +100,11 @@ hr.rounded {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: green;*/
+  background-color: #212121;
 }
 
 .album-info {
-  /*background-color: aqua;*/
+  background-color: aqua;
   justify-content: center;
 }
 
@@ -115,12 +115,10 @@ hr.rounded {
 }
 .albuminfo-container .album-photo img {
   width: 30%;
-  background-color: black;
 }
 
 .albuminfo-container .album-photo img {
   width: 250px;
-  box-shadow: 5px 5px 5px black;
 }
 
 .albuminfo-container .album-info ul {
@@ -164,132 +162,106 @@ hr.rounded {
   display: flex;
 }
 
-.song-container {
-  padding: 20px;
-  color: white;
-}
-
-.songlist {
-  padding: 0;
-}
-
-.songlist-row {
-  height: 80px;
-  padding: 15px 10px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.songlist-row:hover {
-  background-color: #282828;
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
   border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.songlist-row span {
-  color: #939393;
-  font-weight: 200;
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
 }
 
-.songlist-row .song-count {
-  width: 5%;
-  align-self: center;
-  float: left;
+.content form .song-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
 }
 
-.songlist-row .song-count img {
-  width: 20px;
-  visibility: hidden;
-  position: absolute;
-  cursor: pointer;
+form .song-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
 }
 
-.songlist-row:hover .song-count img {
-  visibility: visible;
-}
-
-.songlist-row .song-count span {
-  visibility: visible;
-}
-
-.songlist-row:hover .song-count span {
-  visibility: hidden;
-}
-
-.songlist-row .song-image {
-  margin: 10px;
-  width: 10%;
-  float: left;
-}
-
-.songlist-row .song-image img {
-  max-width: 100%;
-}
-
-.songlist-row .song-info {
-  width: 75%;
-  float: left;
-}
-
-.songlist-row .song-info span {
+form .input-box span.details {
   display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
-.songlist-row .song-info .song-title {
+.song-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.song-details .input-box input:focus,
+.song-details .input-box input:valid {
+  border-color: #1db954;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: calc(100% / 2 - 20px);
+  margin: auto;
+  border-radius: 5px;
+  border: none;
   color: #fff;
-}
-
-.songlist-row .song-releasedate {
-  width: 15%;
-  float: left;
-  text-align: right;
-}
-
-.songlist-row .song-genre {
-  width: 12%;
-  float: left;
-  text-align: right;
-}
-
-.songlist-row .trackOptions {
-  width: 5%;
-  float: left;
-  text-align: right;
-}
-
-.songlist-row .trackOptions img {
-  width: 15px;
-  visibility: hidden;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
   cursor: pointer;
-}
-
-.songlist-row:hover .trackOptions img {
-  visibility: visible;
-}
-
-.button {
-  color: white;
-  padding: 8px 13px;
-  margin: 5px;
-  font-size: 13px;
-  border-radius: 15px;
-  border-style: none;
-}
-
-.delete-button {
-  background: red;
-}
-.edit-button,
-.manage-button {
-  background: #1ed760;
-}
-.button:hover {
-  color: black;
+  transition: all 0.3s ease;
   background: #1db954;
-  padding: 8px 13px;
-  margin: 5px;
-  font-size: 13px;
-  border-radius: 15px;
-  border-style: none;
-  background: white;
+}
+
+form .button input:hover {
+  background: #1db954;
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .song-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .song-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .song-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+@media (max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+
+.content p {
+  background-color: aqua;
 }
