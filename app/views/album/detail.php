@@ -87,7 +87,7 @@
                                 $query = "SELECT * FROM songs WHERE album_id = '$album_id'";
                                 $db->query($query);
                                 $songs = $db->resultSet();
-                                $count = 1;
+                                $count = 0;
                                 foreach ($songs as $song) {
                                     $count++;
                                     $song_id = $song['song_id'];
