@@ -38,7 +38,7 @@
                     <nav class="profile-navbar">
                          <a href="album.html" class="user"> Hello, <?php echo (isset($_SESSION['is_admin']) ? $_SESSION['username'] : "Guest");?> </a>
                     </nav>
-                    <a href="/?album" class="previous-button">&#8249;</a>
+                    <a href="/?album/detail/<?php echo $data['id']; ?>" class="previous-button">&#8249;</a>
                     <div class="albuminfo-container">
                         <div class="album-photo">
                             <img class="album-img" src="../../../public/img/binomify-logo.png">
