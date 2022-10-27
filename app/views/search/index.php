@@ -68,14 +68,14 @@
 
                         </div>
 
-                        <div class="select">
-                        <select name="sort" id="sort" onchange=searchSong()>
-                          <option value="">none</option>
-                          <option value="_judul">judul asc</option>
-                          <option value="-judul">judul desc</option>
-                          <option value="_tanggal_terbit">tanggal terbit asc</option>
-                          <option value="-tanggal_terbit">tanggal terbit desc</option>
-                        </select>
+                        <div class="select sort">
+                            <select name="sort" id="sort" onchange=searchSong()>
+                            <option value="">Sort By</option>
+                            <option value="_judul">Title Asc</option>
+                            <option value="-judul">Title Desc</option>
+                            <option value="_tanggal_terbit"> Date Asc</option>
+                            <option value="-tanggal_terbit">Date Desc</option>
+                            </select>
                         </div>
                 
                         <!-- KODE AJAIB -->
@@ -92,11 +92,11 @@
                           </div>
 
                           <div class='song-info'>
-                              <span class='song-title'> Title<i class="fa fa-caret-down"></i><i class="fa fa-caret-up"></i> </span>
+                              <span class='song-title'> Title </span>
                           </div>
 
                           <div class='song-releasedate'>
-                              <span class='release-date'>Date<i class="fa fa-caret-down"></i><i class="fa fa-caret-up"></i></span>
+                              <span class='release-date'>Date</span>
                           </div>
 
                           <div class='song-genre'>

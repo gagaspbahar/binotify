@@ -206,6 +206,10 @@ select::-ms-expand {
     direction: rtl;
 }
 
+.sort {
+    margin-right: 15px;
+}
+
 #filter * {
     background-color: #282828;
 }
