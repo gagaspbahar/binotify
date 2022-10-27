@@ -87,6 +87,7 @@ hr.rounded {
 .album-container {
   padding: 20px;
   color: white;
+  max-height: max-content;
 }
 
 .album-container h1 {
@@ -102,29 +103,28 @@ hr.rounded {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 220px 220px 220px 220px;
-  grid-auto-columns: 220px;
   grid-auto-rows: 330px;
-  row-gap: 10%;
+  row-gap: 50px;
   column-gap: 50px;
-  justify-content: center;
-  overflow: visible;
-  grid-auto-flow: row dense;
+  justify-content: space-evenly;
+  max-height: max-content;
 }
 
 .grid-item {
-  background-color: #171717;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 10px;
+  background-color: #171717;
 }
 
 .grid-item .album-image {
   width: 180px;
+  height: 180px;
 }
 
 .grid-item .album-title {
-  margin-top: 2px;
+  margin-top: 8px;
   font-size: 20px;
   width: 180px;
   white-space: nowrap;
@@ -146,6 +146,17 @@ hr.rounded {
 
 ul {
   list-style-type: none;
+}
+@media only screen and (max-width: 1250px) {
+  .grid-container {
+    grid-template-columns: 220px 220px 220px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 220px 220px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
