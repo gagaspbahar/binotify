@@ -85,14 +85,16 @@
                                 $query = "SELECT * FROM songs WHERE album_id = '$album_id'";
                                 $db->query($query);
                                 $songs = $db->resultSet();
+                                $const = 0;
                                 foreach ($songs as $song) {
+                                    $const++;
                                     $song_id = $song['song_id'];
                                     $date = date("d/m/Y", strtotime($song['tanggal_terbit']));
                                 echo "
                                     <li class='songlist-row'>
                                         <div class='song-count'>
                                             <img class='play' src='../../../public/img/play-white.png'>
-                                            <span class='song-number'> 1.</span>
+                                            <span class='song-number'> $const.</span>
                                         </div>
                                         <div class='song-info'>
                                             <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>

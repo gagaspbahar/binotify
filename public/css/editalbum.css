@@ -180,6 +180,37 @@ form .cancel input:hover {
   background: red;
 }
 
+.button button {
+  height: 100%;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+.save button {
+  background: #1db954;
+}
+
+.cancel button {
+  background: #6d6464;
+}
+
+.save button:hover {
+  background: #17e760;
+}
+
+.cancel button:hover {
+  background: red;
+}
+
 @media (max-width: 584px) {
   .container {
     max-width: 100%;

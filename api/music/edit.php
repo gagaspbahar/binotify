@@ -12,12 +12,6 @@ if (isset($_POST['id'])) {
         $img_dir = "../../public/img/song-cover/";
         $target_img_file = $img_dir . basename($_FILES["file"]["name"]);
         $imgFileType = strtolower(pathinfo($target_img_file, PATHINFO_EXTENSION));
-
-        // Check if file already exists
-        if (file_exists($target_img_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
     
         // Check file size
         if ($_FILES["file"]["size"] > 10000000) {

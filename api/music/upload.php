@@ -22,11 +22,6 @@ if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi'])
     $songFileType = strtolower(pathinfo($target_song_file,PATHINFO_EXTENSION));
     $imgFileType = strtolower(pathinfo($target_img_file,PATHINFO_EXTENSION));
 
-    // Check if file already exists
-    if (file_exists($target_song_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
     
     if (file_exists($target_img_file)) {
         echo "Sorry, file already exists.";

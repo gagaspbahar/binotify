@@ -17,7 +17,11 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script type="text/javascript">
+            var album_id = '<?php echo $data['id']; ?>';
+        </script>
         <script src="../../../public/js/navbar.js"></script>
+        <script src="../../../public/js/albumedit.js"></script>
     </head>
 
     <body>
@@ -38,7 +42,7 @@
                     </nav>
                     <div class="album-info-container">
                         <div class="album-photo">
-                            <img class="album-img" src="../../../public/img/binotify-mascot.svg">
+                            <img class="album-img" id="album-img" src="../../../public/img/binotify-mascot.svg">
                         </div>
                         <div class="album-info">
                             <form>
@@ -54,10 +58,10 @@
                                 </div>
                                 <div class="button-select">
                                     <div class="button save">
-                                        <input type="submit" value="Save changes">
+                                        <input type="button" value="Save changes" onclick=submitForm()>
                                     </div>
                                     <div class="button cancel">
-                                        <input type="submit" value="cancel">
+                                        <button type="button" onclick=cancelForm()>Cancel</button>
                                     </div>
                                 </div>
                             </form>

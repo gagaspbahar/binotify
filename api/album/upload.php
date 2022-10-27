@@ -11,12 +11,6 @@ if (isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi']
   $uploadOk = 1;
   $imgFileType = strtolower(pathinfo($target_img_file, PATHINFO_EXTENSION));
 
-  // Check if file already exists 
-  if (file_exists($target_img_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-  }
-
   // Check file size
   if ($_FILES["file"]["size"] > 10000000) {
     echo "Sorry, your file is too large.";
