@@ -38,7 +38,7 @@
 
                 <div class="homepage-container">
                     <nav class="profile-navbar">
-                        <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
+                        <h1 class="user"> Hello, <h2 class="username"><?php echo $_SESSION['username'] ?> </h2> <i class="fa fa-user"></i> </h1>
                     </nav>
 
                     <div class="song-container">

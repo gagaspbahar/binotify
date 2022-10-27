@@ -36,10 +36,16 @@
                 <div class="homepage-container">
                   <nav class="profile-navbar">
                     <div class="searchbar-container">
-                        <input type="text" class="searchTerm "id="search-input" placeholder="What do you want to listen to?"> </input>
-                        <button type="submit" class="search-button" onclick=searchSong()><i class="fa fa-search"></i></button>
+                        <div class="search-box">
+                            <input type="text" class="searchTerm "id="search-input" placeholder="What do you want to listen to?"> </input>
+                            <button type="submit" class="search-button" onclick=searchSong()><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
-                    <a href="album.html" class="user"> Hello, <?php echo $_SESSION['username'] ?> </a>
+
+                    <div class="username-container">
+                        <h1 class="user"> Hello, <h2 class="username"><?php echo $_SESSION['username'] ?> </h2> <i class="fa fa-user"></i> </h1>
+                    </div>
+                        <!-- <a href="album.html" class="user"> Hello, </a> -->
                   </nav>
 
                     <div class="song-container">
@@ -53,10 +59,16 @@
                           <option value="-tanggal_terbit">tanggal terbit desc</option>
                         </select>
                         <select name="filter" id="filter">
-                          <option value="">none</option>
-                          <option value="R&B">R&B</option>
-                          <option value="Rock">Rock</option>
-                          <option value="Pop">Pop</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Jazz">Jazz</option>
+                        <option value="R&B">R&B</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Soul">Soul</option>
+                        <option value="Classic">Classic</option>
+                        <option value="Contemporary">Contemporary</option>
+                        <option value="Country">Country</option>
+                        <option value="KPop">KPop</option>
+                        <option value="" selected>select genre</option>
                         </select>
 
                         <input type="text" id="page"></input>

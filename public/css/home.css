@@ -70,6 +70,7 @@ hr.rounded {
   cursor: pointer;
 }
 
+/* username di kanan */
 .profile-navbar {
   height: 50px;
   display: flex;
@@ -78,11 +79,28 @@ hr.rounded {
   padding: 20px;
 }
 
-.profile-navbar a.user {
-  font-size: 20px;
+.profile-navbar h1.user {
+  margin-top: 12px;
+  font-size: 25px;
   color: white;
   float: right;
 }
+
+.profile-navbar h2.username {
+  margin-top: 10px;
+  margin-left: 3px;
+  color: white;
+  text-decoration: underline solid #1DB954 3px;
+}
+
+.profile-navbar .fa{
+  color: white;
+  height: 10px;
+  font-size: 25px;
+  padding-right: 10px;
+  margin-left: 8px;
+}
+
 
 /* SONG LIST */
 .song-container {
