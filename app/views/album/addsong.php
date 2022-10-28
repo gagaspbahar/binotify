@@ -77,7 +77,7 @@
                                             <img class='play' src='../../../public/img/plus.svg' onclick='addSong($song_id, $album_id)' >
                                         </div>
                                         <div class='song-info'>
-                                            <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
+                                            <span class='song-title'>$song[judul]</span>
                                         </div>
                                     </li>
                                     ";

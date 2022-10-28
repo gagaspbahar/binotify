@@ -269,19 +269,17 @@ hr.rounded {
 .delete-song-button:hover {
   background: red;
   color: white;
+  border-width: 0px;
 }
 .edit-button:hover,
 .add-button:hover {
   background: #1ed760;
   color: white;
+  border-width: 0px;
 }
 
 a.detail {
   color: #fff;
-}
-
-a.detail:hover {
-  text-decoration: underline;
 }
 
 .done-button {
