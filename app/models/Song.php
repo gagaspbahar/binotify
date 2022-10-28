@@ -79,7 +79,7 @@ class SongModel
     $query = "SELECT * FROM songs";
     $where = false;
     if (isset($data['judul'])) {
-      $query .= " WHERE LOWER(judul) LIKE :judul";
+      $query .= " WHERE LOWER(judul) LIKE :judul OR LOWER(penyanyi) LIKE :judul OR date_part('year', tanggal_terbit)::varchar LIKE :judul ";
       $where = true;
     }
     if (isset($data['genre'])) {
@@ -113,7 +113,6 @@ class SongModel
       $query .= " OFFSET :offset";
     }
 
-    // error_log(print_r($query, TRUE));
 
     $this->db->query($query);
     if (isset($data['judul'])) {
