@@ -46,7 +46,7 @@
                         <div class='songlist-row'>
                             <div class="column left">
                                 <div class="song-image-detail">
-                                    <img class='song-image' src='../../../public/img/binomify-logo.png'>
+                                    <img class='song-image' src='../../../public/img/binotify-mascot.svg'>
                                 </div>
                             </div>
 
