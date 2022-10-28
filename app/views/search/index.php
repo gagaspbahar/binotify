@@ -54,7 +54,7 @@
                             <select name="filter" id="filter" onchange=searchSong()>
                                 <option value="Pop">Pop</option>
                                 <option value="Jazz">Jazz</option>
-                                <option value="R&B">R&B</option>
+                                <option value="RnB">RnB</option>
                                 <option value="Rock">Rock</option>
                                 <option value="Soul">Soul</option>
                                 <option value="Classic">Classic</option>
