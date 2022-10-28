@@ -68,20 +68,28 @@
                               }
                               ?>
         </p>
-        <p class="signup">Don't have an account?</p>
+        <p class="signup">Don't have an account?
+          <span onclick="window.location.href='/?register'"
+            class="signup-text"
+          >
+            Sign Up
+          </span>
+        </p>
 
-        <button
+        <!-- <button
           class="signup-button"
           onclick="window.location.href='/?register'"
         >
           Sign Up
-        </button>
-        <br />
+        </button> -->
+        <!-- <p class="signup">OR</p> -->
+
+        <div class="line"></div>
         <button
-          class="signup-button"
+          class="guest-button"
           onclick="window.location.href='/api/auth/guest.php'"
         >
-          or login as guest
+           Login as Guest
         </button>
       </div>
     </div>
