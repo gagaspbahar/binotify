@@ -44,12 +44,12 @@ if (isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi']
 
   if ($rows) {
     http_response_code(200);
-    echo "Album added.";
+    echo json_encode(array("message" => "Album successfully added."));
   } else {
     http_response_code(500);
-    echo "Adding album failed";
+    echo json_encode(array("message" => "Something went wrong."));
   }
 } else {
   http_response_code(400);
-  echo "Bad request";
+  echo json_encode(array("message" => "Bad request."));
 }

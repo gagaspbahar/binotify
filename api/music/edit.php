@@ -12,39 +12,39 @@ if (isset($_POST['id'])) {
         $img_dir = "../../public/img/song-cover/";
         $target_img_file = $img_dir . basename($_FILES["file"]["name"]);
         $imgFileType = strtolower(pathinfo($target_img_file, PATHINFO_EXTENSION));
-    
+
         // Check file size
         if ($_FILES["file"]["size"] > 10000000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
         }
-    
+
         // Allow certain file formats
         if ($imgFileType != "png" && $imgFileType != "jpeg" && $imgFileType != "jpg") {
             echo "Sorry, only png, jpg & jpeg files are allowed.";
             $uploadOk = 0;
         }
-    
+
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             echo "Sorry, song edit failed.";
-    
+
             // if everything is ok, try to upload file
         } else {
             $st = move_uploaded_file($_FILES["file"]["tmp_name"], $target_img_file);
         }
     }
 
-    if(isset($_POST['judul'])) {
+    if (isset($_POST['judul'])) {
         $song['judul'] = $_POST['judul'];
     }
-    if(isset($_POST['genre'])) {
+    if (isset($_POST['genre'])) {
         $song['genre'] = $_POST['genre'];
     }
-    if(isset($_POST['tanggal_terbit'])) {
+    if (isset($_POST['tanggal_terbit'])) {
         $song['tanggal_terbit'] = $_POST['tanggal_terbit'];
     }
-    if(isset($_FILES) && $uploadOk){
+    if (isset($_FILES) && $uploadOk) {
         $song['image_path'] = $target_img_file;
     }
 

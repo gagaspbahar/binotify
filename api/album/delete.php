@@ -9,15 +9,14 @@ if (isset($_POST['id'])) {
 
   $rows = $album_model->deleteAlbum($_POST['id']);
 
-  if($rows) {
+  if ($rows) {
     // $rm_img = 'rm ../../' . $album['image_path'];
     // exec($rm_img);
     http_response_code(200);
     echo json_encode(array(
       "message" => "Song deleted successfully."
     ));
-  }
-  else {
+  } else {
     http_response_code(500);
     echo json_encode(array(
       "message" => "Song deletion failed."

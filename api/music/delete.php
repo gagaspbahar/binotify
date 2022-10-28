@@ -9,7 +9,7 @@ if (isset($_POST['id'])) {
 
   $rows = $song_model->deleteSong($_POST['id']);
 
-  if($rows) {
+  if ($rows) {
     $rm_song = 'rm ../../' . $song['audio_path'];
     $rm_img = 'rm ../../' . $song['image_path'];
     exec($rm_song);
@@ -18,8 +18,7 @@ if (isset($_POST['id'])) {
     echo json_encode(array(
       "message" => "Song deleted successfully."
     ));
-  }
-  else {
+  } else {
     http_response_code(500);
     echo json_encode(array(
       "message" => "Song deletion failed."

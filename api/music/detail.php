@@ -8,16 +8,14 @@ $song_model = new SongModel();
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
   $song = $song_model->getSongWithAlbumById($id);
-  if($song != null){
+  if ($song != null) {
     http_response_code(200);
     echo json_encode($song);
-  }
-  else{
+  } else {
     http_response_code(500);
-    echo "Something went wrong.";
+    echo json_encode(array("message" => "Something went wrong."));
   }
-}
-else{
+} else {
   http_response_code(400);
-  echo "Bad request.";
+  echo json_encode(array("message" => "Bad request."));
 }
