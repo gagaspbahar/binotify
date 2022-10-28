@@ -78,7 +78,6 @@
                                         </div>
                                         <div class='song-info'>
                                             <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
-                                            <span class='singer'>$song[penyanyi]</span>
                                         </div>
                                     </li>
                                     ";
