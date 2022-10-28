@@ -22,12 +22,6 @@ if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi'])
     $songFileType = strtolower(pathinfo($target_song_file,PATHINFO_EXTENSION));
     $imgFileType = strtolower(pathinfo($target_img_file,PATHINFO_EXTENSION));
 
-    
-    if (file_exists($target_img_file)) {
-        echo "Sorry, file already exists.";
-        $uploadOk = 0;
-    }
-
     // Check file size
     if ($_FILES["file"]["size"]> 10000000) {
         echo "Sorry, your file is too large.";
@@ -60,9 +54,11 @@ if(isset($_POST['judul']) && isset($_POST['genre']) && isset($_POST['penyanyi'])
         
         $song_model = new SongModel();
     
-        $cmd = 'mp3info -p "%S" ' . $target_song_file;
+        $cmd = 'ffprobe -i "'. $target_song_file .'" -show_entries format=duration -v quiet -of csv="p=0"';
+        error_log(print_r($cmd, true));
+        // $cmd = 'mp3info -p "%S" ' . $target_song_file;
         $duration = intval(exec($cmd));
-    
+        error_log(print_r($duration, true));
         $dataparams = array(
             'judul' => $_POST['judul'],
             'penyanyi' => $_POST['penyanyi'],
