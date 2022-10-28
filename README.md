@@ -35,9 +35,15 @@ Pindahkan isi dari repository ini ke htdocs pada XAMPP. Konfigurasi database dap
 
 ### Register Page
 
+![](screenshots/20221028144314.png)  
+
 ### Home Page
 
+![](screenshots/20221028144337.png)  
+
 ### Search, Sort, Filter Page
+
+
 
 ### Daftar Album Page
 
