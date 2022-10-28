@@ -69,7 +69,7 @@ include_once 'app/core/Database.php';
                                                 <span class="details">Release Date</span>
                                                 <input id="input-date" name="release-date" type="date" placeholder="Enter song release date">
                                             </div>
-                                            <div class="input-box">
+                                            <div class="input-box filter" id="filter">
                                                 <span class="details">Genre</span>
                                                 <!-- <input id="input-genre" name="genre" type="text" placeholder="Enter song genre"> -->
                                                 <select id="input-genre" name="genre">
@@ -85,9 +85,9 @@ include_once 'app/core/Database.php';
                                                     <option value="none" selected>select genre</option>
                                                 </select>
                                             </div>
-                                            <div class="input-box">
+                                            <div class="input-box file-upload">
                                                 <span class="details">Song Cover</span>
-                                                <input id="input-file-1" name="file[]" type="file" placeholder="Enter song cover">
+                                                <input id="input-file-1" name="file[]" type="file" class="upload-box" placeholder="Enter song cover">
                                             </div>
                                         </div>
 

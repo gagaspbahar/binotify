@@ -337,3 +337,19 @@ form .button input:hover {
     }
 }
 
+::-webkit-file-upload-button {
+    color: white;
+    background: #404040;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    height: 35px;
+    box-shadow: 1px 0 1px #212121;
+}
+
+
+::-webkit-file-upload-button:hover {
+    background: #939393;
+}
+
+
