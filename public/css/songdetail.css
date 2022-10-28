@@ -128,10 +128,6 @@ hr.rounded {
         cursor: pointer;
     }
 
-    .navbar ul li a{
-        display: none;
-    }
-
     .homepage-container {
         overflow-y: scroll;
     }
@@ -465,4 +461,74 @@ hr.rounded {
 
 .cancel-button:hover {
     background: red;
+}
+
+.song-info form .song-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .song-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.song-details .input-box input{
+    color: #282828;
+    height: 35px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 5px;
+    border-bottom-width: 2px;
+    border: none;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.input-box .filter #input-genre {
+    text-align: right;
+    position: relative;
+    display: flex;
+    width: 9em;
+    height: 1.5em;
+    border-radius: .25em;
+    overflow: hidden;
+    float: right;
+    text-align-last:right;
+    padding-right: 29px;
+    direction: rtl;
+}
+
+#filter * {
+    width: 190px;
+}
+
+.song-details .input-box input.upload-box{
+    padding-left: 0px;
+}
+
+::-webkit-file-upload-button {
+    color: white;
+    background: #404040;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    height: 35px;
+    box-shadow: 1px 0 1px #212121;
+}
+
+
+::-webkit-file-upload-button:hover {
+    background: #939393;
 }
