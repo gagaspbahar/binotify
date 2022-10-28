@@ -16,8 +16,7 @@ if (isset($data['username'])) {
   if ($user == null) {
     http_response_code(200);
     echo json_encode(array('status' => 'success', 'message' => 'User not found'));
-  }
-  else {
+  } else {
     echo json_encode(array('status' => 'error', 'message' => 'User exists'));
   }
 }
@@ -28,8 +27,7 @@ if (isset($data['email'])) {
   if ($user == null) {
     http_response_code(200);
     echo json_encode(array('status' => 'success', 'message' => 'User not found'));
-  }
-  else {
+  } else {
     echo json_encode(array('status' => 'error', 'message' => 'User exists'));
   }
 }
@@ -41,7 +39,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['emai
   $email = $_POST['email'];
   $rows = $user_model->register(array('username' => $username, 'password' => $password, 'email' => $email));
 
-  if ($rows){
+  if ($rows) {
     header('Location: ../../?login');
   } else {
     $_SESSION['error'] = "Something went wrong";

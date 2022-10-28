@@ -8,16 +8,14 @@ $album_model = new AlbumModel();
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
   $album = $album_model->getAlbumByAlbumId($id);
-  if($album != null){
+  if ($album != null) {
     http_response_code(200);
     echo json_encode($album);
-  }
-  else{
+  } else {
     http_response_code(500);
-    echo "Something went wrong.";
+    echo json_encode(array("message" => "Something went wrong."));
   }
-}
-else{
+} else {
   http_response_code(400);
-  echo "Bad request.";
+  echo json_encode(array("message" => "Bad request."));
 }
