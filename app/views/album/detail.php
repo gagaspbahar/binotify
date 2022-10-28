@@ -74,8 +74,8 @@
                                 <li class='album-title'>Loading...</li>
                                 <li class='album-artist'>Loading...</li>
                                 <ul>
-                                    <li class='album-year'>2022</li>
-                                    <li class='album-genre'>Pop</li>
+                                    <li class='album-year'>Loading...</li>
+                                    <li class='album-genre'>Loading...</li>
                                     <li class='album-duration'>Loading..</li>
                                 </ul>
                             </ul>
