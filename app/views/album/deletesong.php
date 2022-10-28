@@ -19,6 +19,7 @@
             referrerpolicy="no-referrer"
         />
         
+        <script src="../../../public/js/utility.js"></script>
         <script src="../../../public/js/removesong.js"></script>
         <script src="../../../public/js/navbar.js"></script>
     </head>

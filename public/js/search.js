@@ -82,43 +82,48 @@ const searchSong = (data = "") => {
       songList.innerHTML = "";
       window.history.pushState("", "", "/?search/" + add_url);
       let count = 1 + (parseInt(getQueryVariable("page")) - 1) * 5;
-      response.forEach((song) => {
-        songList.innerHTML += `
-            <div class='songlist-row'>
-              <div class='song-count'>
-                  <a href='/?detailalbum'>
-                      <img class='play' src='../../../public/img/play-white.png'>
-                  </a>
-                  <span class='song-number'> ${count}.</span>
+      if (response['status'] == "error") {
+        songList.innerHTML = `<img src="../../../public/img/bino-sed.jpg" alt="logo" class="not-found-pic">
+        <p> Sorry, no more songs :(</p>`
+      } else {
+        response.forEach((song) => {
+          songList.innerHTML += `
+              <div class='songlist-row'>
+                <div class='song-count'>
+                    <a href='/?detailalbum'>
+                        <img class='play' src='../../../public/img/play-white.png'>
+                    </a>
+                    <span class='song-number'> ${count}.</span>
+                </div>
+                <div class='song-image'>
+                  <img class='songimage' src='../../../${song.image_path}'>
+                </div>
+  
+                <div class='song-info'>
+                  <span class='song-title'><a class='detail' href='/?song/${
+                    song.song_id
+                  }'>${song.judul}</a></span>
+                  <span class='singer'>${song.penyanyi}</span>
+                </div>
+  
+                <div class='song-releasedate'>
+                    <span class='release-date'>${getReleaseDate(
+                      song.tanggal_terbit
+                    )}</span>
+                </div>
+  
+                <div class='song-genre'>
+                    <span class='genre'>${song.genre}</span>
+                </div>
+  
+                <div class='trackOptions'>
+                    <img class='optionButton' src='../../../public/img/more.png'>
+                </div>
               </div>
-              <div class='song-image'>
-                <img class='songimage' src='../../../${song.image_path}'>
-              </div>
-
-              <div class='song-info'>
-                <span class='song-title'><a class='detail' href='/?song/${
-                  song.song_id
-                }'>${song.judul}</a></span>
-                <span class='singer'>${song.penyanyi}</span>
-              </div>
-
-              <div class='song-releasedate'>
-                  <span class='release-date'>${getReleaseDate(
-                    song.tanggal_terbit
-                  )}</span>
-              </div>
-
-              <div class='song-genre'>
-                  <span class='genre'>${song.genre}</span>
-              </div>
-
-              <div class='trackOptions'>
-                  <img class='optionButton' src='../../../public/img/more.png'>
-              </div>
-            </div>
-          `;
-        count++;
-      });
+            `;
+          count++;
+        });
+      }
     }
   };
   xhr.send();
