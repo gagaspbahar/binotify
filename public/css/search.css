@@ -318,6 +318,7 @@ select::-ms-expand {
 
 .songlist-row .song-image img {
     max-width: 100%;
+    max-height: 85px;
 }
 
 .songlist-row .song-info {
