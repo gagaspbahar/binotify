@@ -1,10 +1,10 @@
 6. Buatlah file README yang berisi:
-    * Deskripsi aplikasi web
-    * Daftar requirement
-    * Cara instalasi
-    * Cara menjalankan server
-    * Screenshot tampilan aplikasi (tidak perlu semua kasus, minimal 1 per halaman), dan 
-    * Penjelasan mengenai pembagian tugas masing-masing anggota (lihat formatnya pada bagian pembagian tugas).
+   - Deskripsi aplikasi web
+   - Daftar requirement
+   - Cara instalasi
+   - Cara menjalankan server
+   - Screenshot tampilan aplikasi (tidak perlu semua kasus, minimal 1 per halaman), dan
+   - Penjelasan mengenai pembagian tugas masing-masing anggota (lihat formatnya pada bagian pembagian tugas).
 
 # Deskripsi aplikasi web
 
@@ -30,46 +30,70 @@ Pindahkan isi dari repository ini ke htdocs pada XAMPP. Konfigurasi database dap
 # Screenshot tampilan aplikasi
 
 ### Login Page
-![](screenshots/20221028142714.png)  
+
+![](screenshots/20221028142714.png)
 
 ### Register Page
 
+### Home Page
 
+### Search, Sort, Filter Page
 
-# Pembagian tugas
+### Daftar Album Page
+
+### Detail Album Page
+
+### Detail Lagu Page
+
+### Edit Album
+
+### Edit Lagu
+
+### Tambah Album
+
+### Tambah Lagu
+
+### Pembagian tugas
+
+### Daftar User
+
+### 404 Page
 
 ## Frontend / Client-side
-1. Login:
-2. Register: 
-3. Home:
-4. Daftar Album:
-5. Search, Sort, Filter:
-6. Detail Lagu: 
-7. Detail Album: 
-8. Edit Lagu: 
-9. Edit Album: 
-10. Tambah Album:
-11. Tambah Lagu: 
-12. Daftar User: 
-13. 404 : 
-14. Navbar: 
-15. Responsive Adjustments: 
-16. Global Styling: 
-17. Initial Design: 
 
+13520016, 13520073
+
+1. Login:
+2. Register:
+3. Home:
+4. Daftar Album: 13520076
+5. Search, Sort, Filter:
+6. Detail Lagu:
+7. Detail Album:
+8. Edit Lagu:
+9. Edit Album:
+10. Tambah Album:
+11. Tambah Lagu:
+12. Daftar User:
+13. 404 :
+14. Navbar:
+15. Responsive Adjustments:
+16. Global Styling:
+17. Initial Design:
 
 ## Backend / Server-side
+
 1. Auth (Login, Register, Logout):
 2. Guest & Limiting:
-3. Home: 
+3. Home:
 4. Search, Sort, Filter:
-5. Detail Lagu: 
-6. Detail Album: 
-7. Edit Lagu: 
-8. Edit Album: 
-9.  Tambah Album:
-10. Tambah Lagu: 
+5. Detail Lagu:
+6. Detail Album:
+7. Edit Lagu:
+8. Edit Album:
+9. Tambah Album:
+10. Tambah Lagu:
 11. Delete Lagu:
-12. Delete Album: 
-13. Daftar User: 
+12. Delete Album:
+13. Daftar User:
 14. Initial Project, Database & Docker Setup:
