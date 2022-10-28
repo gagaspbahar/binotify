@@ -171,6 +171,7 @@ hr.rounded {
 }
 
 .songlist-row .song-image img {
+  max-height: 85px;
   max-width: 100%;
 }
 
