@@ -21,7 +21,7 @@ const getAlbumDetail = (id) => {
       document.querySelector(".album-artist").innerHTML = album.penyanyi;
       document.querySelector(".album-genre").innerHTML = album.genre;
       document.querySelector(".album-duration").innerHTML =
-        album.total_duration;
+        getFancyTimeFormat(album.total_duration);
       document.querySelector(".album-img").src = album.image_path;
       document.querySelector(".album-year").innerHTML = getReleaseYear(
         album.tanggal_terbit

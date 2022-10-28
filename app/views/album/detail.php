@@ -18,6 +18,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="../../../public/js/utility.js"></script>
         <script src="../../../public/js/albumdetail.js"></script>
         <script src="../../../public/js/navbar.js"></script>
     </head>
@@ -75,7 +76,7 @@
                                 <ul>
                                     <li class='album-year'>2022</li>
                                     <li class='album-genre'>Pop</li>
-                                    <li class='album-duration'>28 minutes</li>
+                                    <li class='album-duration'>Loading..</li>
                                 </ul>
                             </ul>
                         </div>
