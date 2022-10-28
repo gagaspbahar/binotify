@@ -80,7 +80,7 @@ const getSongDetail = (id) => {
       document.querySelector(".song-track-title").innerHTML = song.judul;
       document.querySelector(".song-artist").innerHTML = song.penyanyi;
       document.querySelector(".song-track-artist").innerHTML = song.penyanyi;
-      document.querySelector(".song-album").innerHTML += song.judul_album = "No Album" ? "No Album" : ("<a href='/?album/detail/" + song.album_id+ "'>" + song.judul_album + "</a>");
+      document.querySelector(".song-album").innerHTML += song.judul_album == "No Album" ? "No Album" : ("<a href='/?album/detail/" + song.album_id+ "'>" + song.judul_album + "</a>");
       document.querySelector(".genre").innerHTML = song.genre;
       document.querySelector(".duration").innerHTML = getDuration(song.duration);
       document.getElementById("song-release-date").innerHTML = getReleaseDate(song.tanggal_terbit);
