@@ -68,7 +68,14 @@ const incrementGuestSongCount = () => {
 
 const checkGuestSongCount = () => {
   let guestSongCount = getCookie("GUEST");
+  let expireCookie = getCookie("GUEST_EXPIRE")
   if (guestSongCount >= 3){
+    if (Math.floor(Date.now() / 1000) > expireCookie){
+      let expiry = Math.floor(Date.now() / 1000) + 86400;
+      setCookie("GUEST", 0, expiry);
+      setCookie("GUEST_EXPIRE", expiry, expiry);
+      return true;
+    }
     alert("You have reached your maximum song play limit. Please register to continue listening to songs.");
     return false
   }
