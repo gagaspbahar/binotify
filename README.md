@@ -67,39 +67,36 @@ Pindahkan isi dari repository ini ke htdocs pada XAMPP. Konfigurasi database dap
 
 ## Frontend / Client-side
 
-13520016, 13520073
-
-1. Login:
-2. Register:
-3. Home:
+1. Login: 13520016, 13520073
+2. Register: 13520016, 13520073
+3. Home: 13520073
 4. Daftar Album: 13520076
-5. Search, Sort, Filter:
-6. Detail Lagu:
-7. Detail Album:
-8. Edit Lagu:
-9. Edit Album:
-10. Tambah Album:
-11. Tambah Lagu:
-12. Daftar User:
-13. 404 :
-14. Navbar:
-15. Responsive Adjustments:
-16. Global Styling:
-17. Initial Design:
+5. Search, Sort, Filter: 13520073
+6. Detail Lagu: 13520073
+7. Detail Album: 13520076
+8. Edit Lagu: 13520073
+9. Edit Album: 13520076
+10. Tambah Album: 13520076
+11. Tambah Lagu: 13520073
+12. Daftar User: 13520073
+13. 404 : 13520076
+14. Navbar: 13520073
+15. Responsive Adjustments: 13520073, 13520076
+16. Global Styling: 13520016
+17. Initial Design: 13520073, 13520076
 
 ## Backend / Server-side
 
-1. Auth (Login, Register, Logout):
-2. Guest & Limiting:
-3. Home:
-4. Search, Sort, Filter:
-5. Detail Lagu:
-6. Detail Album:
-7. Edit Lagu:
-8. Edit Album:
-9. Tambah Album:
-10. Tambah Lagu:
-11. Delete Lagu:
-12. Delete Album:
-13. Daftar User:
-14. Initial Project, Database & Docker Setup:
+1. Auth (Login, Register, Logout): 13520016
+2. Guest & Limiting: 13520016, 13520076
+3. Home: 13520073
+4. Search, Sort, Filter: 13520016
+5. Detail Lagu: 13520073
+6. Detail Album: 13520076
+7. Daftar Album: 13520076
+8. Edit Lagu: 13520016, 13520073
+9. Edit Album: 13520016
+10. Tambah Album: 13520016
+11. Tambah Lagu: 13520016
+12. Daftar User: 13520073
+13. Initial Project, Database & Docker Setup: 13520016
