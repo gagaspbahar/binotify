@@ -31,6 +31,7 @@
 
     <div class="container">
       <div class="login-container">
+        <img src="../../../public/img/binotify-mascot.svg" alt="logo" class="logo">
         <h1 class="header-title">Binotify</h1>
         <p class="header-subtitle">To continue, login to Binotify.</p>
 
