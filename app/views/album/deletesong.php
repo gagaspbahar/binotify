@@ -75,7 +75,7 @@
                                             <img class='play' src='../../../public/img/trash.svg' onclick=removeSong($song_id) >
                                         </div>
                                         <div class='song-info'>
-                                            <a class='detail' href='/?song/$song_id'><span class='song-title'>$song[judul]</span></a>
+                                            <span class='song-title'>$song[judul]</span>
                                             <span class='singer'>$song[penyanyi]</span>
                                         </div>
 

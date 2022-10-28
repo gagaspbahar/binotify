@@ -178,14 +178,13 @@ hr.rounded {
 
 .songlist-row .song-count {
   width: 5%;
-  align-self: center;
-  float: left;
+  margin: auto;
 }
 
 .songlist-row .song-count img {
   width: 20px;
-  position: absolute;
   cursor: pointer;
+  margin: auto;
 }
 
 .songlist-row .song-count span {
@@ -276,10 +275,15 @@ a.detail:hover {
 
 .done-button {
   background-color: #1ed760;
-  padding: 10px 20px;
+  padding: 10px 30px;
   color: white;
-  margin-left: 400px;
+  margin-left: 40%;
   border-radius: 30px;
+  border-width: 0px;
+}
+
+.done-button:hover {
+  transform: scale(1.05);
 }
 
 .button-container {
