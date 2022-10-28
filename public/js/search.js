@@ -48,7 +48,6 @@ const searchSong = (data = "") => {
 
   const xhr = new XMLHttpRequest();
 
-
   if (data != "") {
     final_url = base_url + data;
     add_url = data;
@@ -82,9 +81,15 @@ const searchSong = (data = "") => {
       songList.innerHTML = "";
       window.history.pushState("", "", "/?search/" + add_url);
       let count = 1 + (parseInt(getQueryVariable("page")) - 1) * 5;
-      if (response['status'] == "error") {
-        songList.innerHTML = `<img src="../../../public/img/bino-sed.jpg" alt="logo" class="not-found-pic">
-        <p> Sorry, no more songs :(</p>`
+      if (response["status"] == "error") {
+        songList.innerHTML = `<div class="bino-sed-container" id="bino-sed-container">
+        <img
+          src="../../../public/img/bino-sed.jpg"
+          alt="logo"
+          class="not-found-pic"
+        />
+        <p>Sorry, no more songs :(</p>
+      </div>`;
       } else {
         response.forEach((song) => {
           songList.innerHTML += `
