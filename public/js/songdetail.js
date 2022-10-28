@@ -12,10 +12,12 @@ function playSong(isGuest) {
     track.play();
     playButton.style.display = "none";
     pauseButton.style.display = "inline";
-  } else {
+  } else if (!isGuest) {
     track.play();
     playButton.style.display = "none";
     pauseButton.style.display = "inline";
+  } else {
+    // Guest yg udah abis, do nothing
   }
 }
 
