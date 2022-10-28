@@ -11,12 +11,15 @@ body {
   flex-direction: column;
 }
 
+.login-container img {
+  width: 150px;
+}
 .username-form {
   display: flex;
   flex-direction: column;
 }
 
-.username-form input{
+.username-form input {
   padding: 20px 15px;
   background-color: #212121;
   border: none;
@@ -32,7 +35,7 @@ body {
 .login-button {
   width: 100%;
   margin-bottom: 10px;
-  background-color: #1DB954;
+  background-color: #1db954;
   border: none;
   border-radius: 22px;
   padding: 10px 15px;
@@ -42,7 +45,7 @@ body {
 }
 
 .login-button:hover {
-  transform: scale(1.05)
+  transform: scale(1.05);
 }
 
 .header-title {
@@ -62,7 +65,7 @@ body {
 }
 
 .signup-text {
-  color: #1DB954;
+  color: #1db954;
 }
 
 .signup-text:hover {
@@ -89,7 +92,7 @@ body {
   background-color: #f1f1f1;
 }
 
-.line{
+.line {
   position: relative;
   height: 1px;
   width: 25%;
@@ -97,8 +100,8 @@ body {
   background-color: #d4d4d4;
 }
 
-.line::before{
-  content: 'OR';
+.line::before {
+  content: "OR";
   position: absolute;
   top: 50%;
   left: 50%;
